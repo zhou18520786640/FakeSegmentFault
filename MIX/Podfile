@@ -1,0 +1,7 @@
+pod 'RDVTabBarController'
+pod 'HMSegmentedControl'
+pod 'MJRefresh'
+platform :ios, '7.0'
+pod "AFNetworking", "~> 2.0"
+pod 'JSONModel'
+pod 'MBProgressHUD', '~> 0.9.1'
