@@ -77,7 +77,7 @@
     ZZNewestCell *newestCell = [tableView dequeueReusableCellWithIdentifier:tableViewReuseIdentifer];
     if (newestCell == nil) {
         newestCell = [[ZZNewestCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableViewReuseIdentifer];
-        newestCell.selectedBackgroundView = [[UIView alloc] initWithFrame:newestCell.frame];
+//        newestCell.selectedBackgroundView = [[UIView alloc] initWithFrame:newestCell.frame];
 //        newestCell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0x)
     }
 
@@ -113,7 +113,7 @@
         self.isPageLoading = NO;
         
         ZZNewestListModel *newestListModel = [[ZZNewestListModel alloc] initWithDictionary:responseObject error:nil];
-        if (newestListModel.status == 0) {
+        if (newestListModel.status == 0) {  // 成功
             
             [self.tableView.header endRefreshing];
             [self.tableView.footer endRefreshing];
