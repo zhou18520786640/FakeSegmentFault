@@ -11,10 +11,11 @@
 
 
 @interface ZZViewController ()
-
 @end
 
 @implementation ZZViewController
+
+
 
 - (void)showText:(NSString*)str{
     if ([str length] > 0) {
@@ -32,5 +33,16 @@
     }
     
 }
+
+
+- (void)configureTitles:(NSString *)titles{
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 36, 18)];
+    titleLabel.text = titles;
+    titleLabel.textColor = [UIColor whiteColor];
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.font = [UIFont systemFontOfSize:18];
+    self.navigationItem.titleView = titleLabel;
+}
+
 
 @end

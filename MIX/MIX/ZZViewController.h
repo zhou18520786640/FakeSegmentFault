@@ -9,6 +9,20 @@
 #import <UIKit/UIKit.h>
 
 @interface ZZViewController : UIViewController
+/**
+ *  封装方法供子类使用
+ *
+ *  @param str 显示文案
+ */
 - (void)showText:(NSString*)str;
+/**
+ *  设置titleView,封装方法供子类使用
+ *
+ *  @param titles 标题
+ */
+- (void)configureTitles:(NSString *)titles;
+
+
+
 
 @end

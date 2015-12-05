@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11462F751807DB81F4ACA06B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA58D1134AA266E019E13602 /* libPods.a */; };
+		CB250D481C12D93100F37028 /* ZZAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D471C12D93100F37028 /* ZZAskViewController.m */; };
 		CB2B0D441C04CE720079847C /* ZZNewestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2B0D431C04CE720079847C /* ZZNewestViewController.m */; };
 		CB32C04B1C04BD9300B6CB02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32C04A1C04BD9300B6CB02 /* main.m */; };
 		CB32C04E1C04BD9300B6CB02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32C04D1C04BD9300B6CB02 /* AppDelegate.m */; };
@@ -55,6 +56,8 @@
 		2761A9352F8ACD5BF24D45AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		90E4E36E01A9F73F00FAE41D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CA58D1134AA266E019E13602 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB250D461C12D93100F37028 /* ZZAskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAskViewController.h; sourceTree = "<group>"; };
+		CB250D471C12D93100F37028 /* ZZAskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAskViewController.m; sourceTree = "<group>"; };
 		CB2B0D421C04CE720079847C /* ZZNewestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewestViewController.h; sourceTree = "<group>"; };
 		CB2B0D431C04CE720079847C /* ZZNewestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewestViewController.m; sourceTree = "<group>"; };
 		CB32C0461C04BD9300B6CB02 /* MIX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +150,15 @@
 				CA58D1134AA266E019E13602 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB250D451C12D89500F37028 /* Ask（提问） */ = {
+			isa = PBXGroup;
+			children = (
+				CB250D461C12D93100F37028 /* ZZAskViewController.h */,
+				CB250D471C12D93100F37028 /* ZZAskViewController.m */,
+			);
+			name = "Ask（提问）";
 			sourceTree = "<group>";
 		};
 		CB2B0D411C04CE4F0079847C /* Question(问题) */ = {
@@ -281,7 +293,8 @@
 		CB32C0761C04C22200B6CB02 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CB987FD51C129E030013B3E0 /* Base（基类，非业务） */,
+				CB987FD51C129E030013B3E0 /* Base 基类 */,
+				CB250D451C12D89500F37028 /* Ask（提问） */,
 				CB2B0D411C04CE4F0079847C /* Question(问题) */,
 				CB2B0D461C04D87A0079847C /* Article（文章） */,
 				CB2B0D471C04D8910079847C /* Find（发现） */,
@@ -341,13 +354,13 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		CB987FD51C129E030013B3E0 /* Base（基类，非业务） */ = {
+		CB987FD51C129E030013B3E0 /* Base 基类 */ = {
 			isa = PBXGroup;
 			children = (
 				CB987FD61C129E350013B3E0 /* ZZViewController.h */,
 				CB987FD71C129E350013B3E0 /* ZZViewController.m */,
 			);
-			name = "Base（基类，非业务）";
+			name = "Base 基类";
 			sourceTree = "<group>";
 		};
 		CBD1BB4A1C12A1B000D977F1 /* Service */ = {
@@ -555,6 +568,7 @@
 				CB34D7751C06F35B0081C4FB /* EXTScope.m in Sources */,
 				CB34D76E1C06EDB70081C4FB /* ZZHottestViewController.m in Sources */,
 				CB32C0791C04C24700B6CB02 /* ZZQuestionViewController.m in Sources */,
+				CB250D481C12D93100F37028 /* ZZAskViewController.m in Sources */,
 				CB32C04E1C04BD9300B6CB02 /* AppDelegate.m in Sources */,
 				CBD1BB571C12A62E00D977F1 /* ZZBaseResponseModel.m in Sources */,
 				CBD1BB531C12A5AF00D977F1 /* ZZNewestListModel.m in Sources */,

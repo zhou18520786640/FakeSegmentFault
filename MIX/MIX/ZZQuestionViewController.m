@@ -13,6 +13,7 @@
 #import "MacroDefinition.h"
 #import "ZZunAnsweredViewController.h"
 #import "EXTScope.h"
+#import "ZZAskViewController.h"
 
 @interface ZZQuestionViewController ()<UIScrollViewDelegate>
 @property (nonatomic, strong) UIScrollView *helperScrollView;
@@ -30,14 +31,21 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 36, 18)];
-    titleLabel.text = @"问题";
-    titleLabel.textColor = [UIColor whiteColor];
-    titleLabel.backgroundColor = [UIColor clearColor];
-    titleLabel.font = [UIFont systemFontOfSize:18];
-    self.navigationItem.titleView = titleLabel;
 
 
+
+    
+    [self configureTitles:@"问题"];
+    
+    // 提问按钮
+    UIButton *askButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    askButton.backgroundColor = [UIColor clearColor];
+    [askButton setTitle:@"提问" forState:UIControlStateNormal];
+    askButton.titleLabel.font = [UIFont systemFontOfSize:17];
+    askButton.frame = CGRectMake(0, 0, 35, 17);
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:askButton];
+    [askButton addTarget:self action:@selector(askButtonDidPressed) forControlEvents:UIControlEventTouchUpInside];
+    
     
     HMSegmentedControl *segmentedControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"最新的", @"热门的", @"未回答"]];
     segmentedControl.frame = CGRectMake(0, 0, self.view.bounds.size.width, 40);
@@ -91,20 +99,6 @@
     [self.helperScrollView addSubview:unAnswerViewController.view];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-//
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma  mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -122,6 +116,13 @@
 
 }
 
+#pragma mark - Button Action
+- (void)askButtonDidPressed{
+    ZZAskViewController *askViewController = [[ZZAskViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:askViewController];
+    [self presentViewController:navigationController animated:YES completion:nil];
+
+}
 
 
 @end
