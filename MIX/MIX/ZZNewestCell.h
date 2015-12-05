@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZZNewestModel.h"
+#import "ZZNewestListModel.h"
+
 
 
 @interface ZZNewestCell : UITableViewCell
 
-- (void)updateWithNewestModel:(ZZNewestModel *)newestModel;
+- (void)updateWithNewestModel:(ZZNewestListModel *)newestListModel;
 
 @end

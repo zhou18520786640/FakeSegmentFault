@@ -10,12 +10,16 @@
 #import "ZZNewestCell.h"
 #import "ZZHttpClient.h"
 #import "MJRefresh.h"
-#import "ZZNewestModel.h"
+#import "ZZNewestListModel.h"
+#import "ZZNewestListItem.h"
 #import "EXTScope.h"
 
 @interface ZZNewestViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, assign) NSInteger page; //当前所在的分页数
-@property (nonatomic, strong) ZZNewestModel *newestModel;
+@property (nonatomic, strong) NSMutableArray<ZZNewestListItemModel *> *newestListItems;
+@property (nonatomic, assign) BOOL isLastPage;
+
+
 
 @end
 
@@ -32,16 +36,20 @@
     @weakify(self);
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self)
-        [self refreshData];
+        self.page = 1;
+        [self refreshDataWithPage:self.page];
     }];
     [self.view addSubview:self.tableView];
-    self.page = 1;
+    
     [self.tableView.header beginRefreshing]; // 代码可以实现。也可以手动实现
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         @strongify(self)
-        [self refreshData];
+        self.page++;
+        [self refreshDataWithPage:self.page];
 
     }];
+    
+    self.newestListItems = [[NSMutableArray alloc] init];
 }
 
 
@@ -68,34 +76,51 @@
 
 
 #pragma mark - custom
-- (void)refreshData{
+- (void)refreshDataWithPage:(NSInteger)page{
     NSMutableDictionary  *parameters = [NSMutableDictionary dictionary];
-    parameters[@"page"] = @(self.page);
+    parameters[@"page"] = @(page);
     @weakify(self);
     [[ZZHttpClient sharedHTTPClient] GET:@"/question/newest" parameters:parameters success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
         @strongify(self);
-        ZZNewestModel *newestModel = [[ZZNewestModel alloc] initWithDictionary:responseObject error:nil];
-        self.newestModel = newestModel;
-        if (newestModel.status == 0) {
+        ZZNewestListModel *newestListModel = [[ZZNewestListModel alloc] initWithDictionary:responseObject error:nil];
+        if (newestListModel.status == 0) {
+            
             [self.tableView.header endRefreshing];
             [self showText:@"获取数据成功"];
-            // 解析过程和铺UI明天做完
+            
+            // 如果是加载第一个数据
+            if (self.page == 1) {
+                [self.newestListItems removeAllObjects];
+            }
+            
+            // 更新数据源
+            NSArray *newestListItemModel = newestListModel.data.items;
+            [self.newestListItems addObjectsFromArray:newestListItemModel];
+            
+            
             [self.tableView reloadData];
         }else{
-        
+            [self handleNewestListResponseFailure];
         }
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         @strongify(self);
-        [self showText:@"网络错误"];
+        [self handleNewestListResponseFailure];
 
-        [self.tableView.header endRefreshing];
-
+   
     }];
-
 
 }
 
-
+- (void)handleNewestListResponseFailure{
+    [self showText:@"网络错误，请重试"];
+    [self.tableView.footer endRefreshing];
+    [self.tableView.header endRefreshing];
+    if(self.page > 1){
+        self.page -= 1;
+    }else{
+        self.page = 1;  // 1无法再减
+    }
+}
 
 @end

@@ -32,9 +32,9 @@
     // Configure the view for the selected state
 }
 
-- (void)updateWithNewestModel:(ZZNewestModel *)newestModel{
-    
-
-}
+//- (void)updateWithNewestModel:(ZZNewestListItemModel *)newestModel{
+//    
+//
+//}
 
 @end

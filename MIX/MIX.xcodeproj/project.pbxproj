@@ -27,9 +27,11 @@
 		CB34D7711C06EE990081C4FB /* ZZunAnsweredViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34D7701C06EE990081C4FB /* ZZunAnsweredViewController.m */; };
 		CB34D7751C06F35B0081C4FB /* EXTScope.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34D7741C06F35B0081C4FB /* EXTScope.m */; };
 		CB34D7791C06FCF60081C4FB /* ZZNewestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34D7781C06FCF60081C4FB /* ZZNewestCell.m */; };
-		CB34D77C1C0704200081C4FB /* ZZNewestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34D77B1C0704200081C4FB /* ZZNewestModel.m */; };
 		CB34D7801C070BE20081C4FB /* ZZNewestVoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34D77F1C070BE20081C4FB /* ZZNewestVoteView.m */; };
 		CB987FD81C129E350013B3E0 /* ZZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB987FD71C129E350013B3E0 /* ZZViewController.m */; };
+		CBD1BB531C12A5AF00D977F1 /* ZZNewestListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1BB521C12A5AF00D977F1 /* ZZNewestListModel.m */; };
+		CBD1BB571C12A62E00D977F1 /* ZZBaseResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1BB561C12A62E00D977F1 /* ZZBaseResponseModel.m */; };
+		CBD1BB5A1C12B2A100D977F1 /* ZZNewestListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1BB591C12B2A100D977F1 /* ZZNewestListItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,12 +94,16 @@
 		CB34D7761C06F3E90081C4FB /* metamacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = metamacros.h; sourceTree = "<group>"; };
 		CB34D7771C06FCF60081C4FB /* ZZNewestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewestCell.h; sourceTree = "<group>"; };
 		CB34D7781C06FCF60081C4FB /* ZZNewestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewestCell.m; sourceTree = "<group>"; };
-		CB34D77A1C0704200081C4FB /* ZZNewestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewestModel.h; sourceTree = "<group>"; };
-		CB34D77B1C0704200081C4FB /* ZZNewestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewestModel.m; sourceTree = "<group>"; };
 		CB34D77E1C070BE20081C4FB /* ZZNewestVoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewestVoteView.h; sourceTree = "<group>"; };
 		CB34D77F1C070BE20081C4FB /* ZZNewestVoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewestVoteView.m; sourceTree = "<group>"; };
 		CB987FD61C129E350013B3E0 /* ZZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZViewController.h; sourceTree = "<group>"; };
 		CB987FD71C129E350013B3E0 /* ZZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZViewController.m; sourceTree = "<group>"; };
+		CBD1BB511C12A5AF00D977F1 /* ZZNewestListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewestListModel.h; sourceTree = "<group>"; };
+		CBD1BB521C12A5AF00D977F1 /* ZZNewestListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewestListModel.m; sourceTree = "<group>"; };
+		CBD1BB551C12A62E00D977F1 /* ZZBaseResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBaseResponseModel.h; sourceTree = "<group>"; };
+		CBD1BB561C12A62E00D977F1 /* ZZBaseResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBaseResponseModel.m; sourceTree = "<group>"; };
+		CBD1BB581C12B2A100D977F1 /* ZZNewestListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewestListItem.h; sourceTree = "<group>"; };
+		CBD1BB591C12B2A100D977F1 /* ZZNewestListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewestListItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +232,7 @@
 		CB32C0481C04BD9300B6CB02 /* MIX */ = {
 			isa = PBXGroup;
 			children = (
+				CBD1BB4A1C12A1B000D977F1 /* Service */,
 				CB34D7811C0714810081C4FB /* Model */,
 				CB34D7641C06E3790081C4FB /* Network */,
 				CB32C0761C04C22200B6CB02 /* ViewController */,
@@ -325,8 +332,11 @@
 		CB34D7811C0714810081C4FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CB34D77A1C0704200081C4FB /* ZZNewestModel.h */,
-				CB34D77B1C0704200081C4FB /* ZZNewestModel.m */,
+				CBD1BB541C12A61400D977F1 /* Base */,
+				CBD1BB511C12A5AF00D977F1 /* ZZNewestListModel.h */,
+				CBD1BB521C12A5AF00D977F1 /* ZZNewestListModel.m */,
+				CBD1BB581C12B2A100D977F1 /* ZZNewestListItem.h */,
+				CBD1BB591C12B2A100D977F1 /* ZZNewestListItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -338,6 +348,22 @@
 				CB987FD71C129E350013B3E0 /* ZZViewController.m */,
 			);
 			name = "Base（基类，非业务）";
+			sourceTree = "<group>";
+		};
+		CBD1BB4A1C12A1B000D977F1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		CBD1BB541C12A61400D977F1 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1BB551C12A62E00D977F1 /* ZZBaseResponseModel.h */,
+				CBD1BB561C12A62E00D977F1 /* ZZBaseResponseModel.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,11 +555,13 @@
 				CB34D7751C06F35B0081C4FB /* EXTScope.m in Sources */,
 				CB34D76E1C06EDB70081C4FB /* ZZHottestViewController.m in Sources */,
 				CB32C0791C04C24700B6CB02 /* ZZQuestionViewController.m in Sources */,
-				CB34D77C1C0704200081C4FB /* ZZNewestModel.m in Sources */,
 				CB32C04E1C04BD9300B6CB02 /* AppDelegate.m in Sources */,
+				CBD1BB571C12A62E00D977F1 /* ZZBaseResponseModel.m in Sources */,
+				CBD1BB531C12A5AF00D977F1 /* ZZNewestListModel.m in Sources */,
 				CB32C04B1C04BD9300B6CB02 /* main.m in Sources */,
 				CB32C07F1C04C27600B6CB02 /* ZZFindViewController.m in Sources */,
 				CB34D7801C070BE20081C4FB /* ZZNewestVoteView.m in Sources */,
+				CBD1BB5A1C12B2A100D977F1 /* ZZNewestListItem.m in Sources */,
 				CB2B0D441C04CE720079847C /* ZZNewestViewController.m in Sources */,
 				CB32C0851C04C28F00B6CB02 /* ZZMeViewController.m in Sources */,
 				CB32C0821C04C28500B6CB02 /* ZZSearchViewController.m in Sources */,
