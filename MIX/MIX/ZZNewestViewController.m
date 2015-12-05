@@ -11,7 +11,6 @@
 #import "ZZHttpClient.h"
 #import "MJRefresh.h"
 #import "ZZNewestModel.h"
-#import "MBProgressHUD.h"
 #import "EXTScope.h"
 
 @interface ZZNewestViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -97,24 +96,6 @@
 
 }
 
-
-- (void)showText:(NSString*)str
-{
-    if ([str length] > 0) {
-        UIView *view = [[UIApplication sharedApplication].delegate window];
-        
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-        
-        hud.removeFromSuperViewOnHide = YES;
-        hud.mode = MBProgressHUDModeText;
-        hud.labelText = str;
-        [view addSubview:hud];
-        
-        [hud show:YES];
-        [hud hide:YES afterDelay:1.5];
-    }
-    
-}
 
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZZViewController.h"
 
-@interface ZZMeViewController : UIViewController
+@interface ZZMeViewController : ZZViewController
 
 @end

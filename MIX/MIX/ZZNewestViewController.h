@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZZViewController.h"
 
-@interface ZZNewestViewController : UIViewController
+@interface ZZNewestViewController : ZZViewController
 @property (nonatomic, strong) UITableView *tableView;
 
 @end

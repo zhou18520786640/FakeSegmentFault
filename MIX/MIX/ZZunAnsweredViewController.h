@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZZViewController.h"
 
-@interface ZZunAnsweredViewController : UIViewController
+@interface ZZunAnsweredViewController : ZZViewController
 
 @end
