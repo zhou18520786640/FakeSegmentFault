@@ -13,11 +13,13 @@
 #import "ZZNewestListModel.h"
 #import "ZZNewestListItem.h"
 #import "EXTScope.h"
+#import "MacroDefinition.h"
 
 @interface ZZNewestViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, assign) NSInteger page; //当前所在的分页数
 @property (nonatomic, strong) NSMutableArray<ZZNewestListItemModel *> *newestListItems;
 @property (nonatomic, assign) BOOL isLastPage; // 是否是最后一页
+@property (nonatomic, assign) BOOL isPageLoading; // 是否正在加载分页
 
 
 
@@ -36,8 +38,10 @@
     @weakify(self);
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self)
-        self.page = 1;
-        [self refreshDataWithPage:self.page];
+        if (self.isPageLoading == NO) {
+            self.page = 1;
+            [self refreshDataWithPage:self.page];
+        }
     }];
     [self.view addSubview:self.tableView];
     
@@ -48,9 +52,11 @@
 
 
     MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        if(self.isLastPage == NO){ // 如果是最后一页的话
-            self.page++;
-            [self refreshDataWithPage:self.page];
+        if(self.isLastPage == NO){ // 如果不是是最后一页的话
+            if(self.isPageLoading == NO){
+                self.page += 1;
+                [self refreshDataWithPage:self.page];
+            }
         }else{
             [self showText:@"没有数据了"];
         }
@@ -71,6 +77,8 @@
     ZZNewestCell *newestCell = [tableView dequeueReusableCellWithIdentifier:tableViewReuseIdentifer];
     if (newestCell == nil) {
         newestCell = [[ZZNewestCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableViewReuseIdentifer];
+        newestCell.selectedBackgroundView = [[UIView alloc] initWithFrame:newestCell.frame];
+//        newestCell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0x)
     }
 
     
@@ -99,12 +107,16 @@
     parameters[@"page"] = @(page);
     @weakify(self);
     parameters[@"token"] = @"2b3aa3e88894040e148a7ad740185173";
+    self.isPageLoading = YES;
     [[ZZHttpClient sharedHTTPClient] GET:@"/question/newest" parameters:parameters success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
         @strongify(self);
+        self.isPageLoading = NO;
+        
         ZZNewestListModel *newestListModel = [[ZZNewestListModel alloc] initWithDictionary:responseObject error:nil];
         if (newestListModel.status == 0) {
             
             [self.tableView.header endRefreshing];
+            [self.tableView.footer endRefreshing];
             
             // 如果是加载第一个数据
             if (self.page == 1) {
@@ -128,6 +140,7 @@
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         @strongify(self);
+        self.isPageLoading = NO;
         [self handleNewestListResponseFailure];
 
     }];
@@ -138,10 +151,8 @@
     [self showText:@"网络错误，请重试"];
     [self.tableView.footer endRefreshing];
     [self.tableView.header endRefreshing];
-    if(self.page > 1){
+    if(self.page >=1){
         self.page -= 1;
-    }else{
-        self.page = 1;  // 1无法再减
     }
 }
 
