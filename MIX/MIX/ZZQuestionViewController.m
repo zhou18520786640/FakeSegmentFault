@@ -65,7 +65,7 @@
     
     
 
-    self.helperScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, segmentedControl.frame.size.height, self.view.bounds.size.width, self.view.bounds.size.height - segmentedControl.frame.size.height - 65 )];
+    self.helperScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, segmentedControl.frame.size.height, self.view.bounds.size.width, self.view.bounds.size.height - segmentedControl.frame.size.height - 49 )];
     [self.view addSubview:self.helperScrollView];
     self.helperScrollView.contentSize = CGSizeMake(self.view.bounds.size.width * 3, self.view.bounds.size.height - segmentedControl.frame.size.height - 65 );
     self.helperScrollView.pagingEnabled = YES;
@@ -74,7 +74,7 @@
     
     
     ZZNewestViewController *newestViewController = [[ZZNewestViewController alloc] init];
-    newestViewController.view.frame = CGRectMake(0, 0, self.helperScrollView.bounds.size.width, self.helperScrollView.bounds.size.height);
+    newestViewController.view.frame = CGRectMake(0, 0, self.helperScrollView.bounds.size.width, self.helperScrollView.bounds.size.height - 65);
     newestViewController.tableView.frame = newestViewController.view.bounds;
     self.newestViewController = newestViewController;
     [self.helperScrollView addSubview:newestViewController.view];
