@@ -17,6 +17,7 @@
 
 @interface ZZNewestViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, assign) NSInteger page; //当前所在的分页数
+// 用于刷新列表数据
 @property (nonatomic, strong) NSMutableArray<ZZNewestListItemModel *> *newestListItems;
 @property (nonatomic, assign) BOOL isLastPage; // 是否是最后一页
 @property (nonatomic, assign) BOOL isPageLoading; // 是否正在加载分页
@@ -38,7 +39,6 @@
     @weakify(self);
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self)
-        NSLog(@"do");
         if (self.isPageLoading == NO) {
             self.page = 1;
             [self refreshDataWithPage:self.page];
@@ -98,7 +98,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ZZNewestListItemModel *newestListItemModel = self.newestListItems[indexPath.row];
+    NSString *newestListItemId = newestListItemModel.newestListItemID;
     
+    if ([self.delegate respondsToSelector:@selector(newestViewController:didPressedWithQuestionId:)]) {
+        [self.delegate newestViewController:self didPressedWithQuestionId:newestListItemId];
+    }
+    
+
 
 }
 

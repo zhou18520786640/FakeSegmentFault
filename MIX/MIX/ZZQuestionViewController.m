@@ -14,8 +14,9 @@
 #import "ZZunAnsweredViewController.h"
 #import "EXTScope.h"
 #import "ZZAskViewController.h"
+#import "ZZQuestionDetailViewController.h"
 
-@interface ZZQuestionViewController ()<UIScrollViewDelegate>
+@interface ZZQuestionViewController ()<UIScrollViewDelegate,ZZNewestViewControllerDelegate>
 @property (nonatomic, strong) UIScrollView *helperScrollView;
 @property (nonatomic, strong) HMSegmentedControl *segmentedControl;
 @property (nonatomic, strong) ZZNewestViewController *newestViewController;
@@ -82,6 +83,7 @@
     
     
     ZZNewestViewController *newestViewController = [[ZZNewestViewController alloc] init];
+    newestViewController.delegate = self;
     newestViewController.view.frame = CGRectMake(0, 0, self.helperScrollView.bounds.size.width, self.helperScrollView.bounds.size.height - 65);
     newestViewController.tableView.frame = newestViewController.view.bounds;
     self.newestViewController = newestViewController;
@@ -121,6 +123,24 @@
     ZZAskViewController *askViewController = [[ZZAskViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:askViewController];
     [self presentViewController:navigationController animated:YES completion:nil];
+
+}
+
+#pragma mark - ZZNewestViewControllerDelegate
+- (void)newestViewController:(ZZNewestViewController *)newestViewController
+    didPressedWithQuestionId:(NSString *)questionid{
+    if (questionid.length == 0) {
+        return;
+    }
+    
+    
+    ZZQuestionDetailViewController *questionDetailViewController = [[ZZQuestionDetailViewController alloc] initWithQuestionId:questionid];
+
+    [self.navigationController pushViewController:questionDetailViewController animated:NO];
+    
+    
+    
+    
 
 }
 

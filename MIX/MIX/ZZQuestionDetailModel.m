@@ -1,67 +1,86 @@
 //
-//  ZZNewestListItem.m
+//  ZZQuestionDetailModel.m
 //  MIX
 //
-//  Created by zhou on 15/12/5.
+//  Created by zhou on 15/12/6.
 //  Copyright © 2015年 jeff.zhou. All rights reserved.
 //
 
-#import "ZZNewestListItem.h"
+#import "ZZQuestionDetailModel.h"
 
-@implementation ZZNewestListDataModel
+@implementation ZZQuestionDetailModel
+
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
-                                                       @"rows": @"items",
+                                                       @"id": @"questionDetailID"
                                                        }];
+    
 }
 
 +(BOOL)propertyIsOptional:(NSString*)propertyName
 {
     return YES;
 }
+
 @end
 
-@implementation ZZNewestListItemModel
+
+@implementation ZZQuestionDetailLastAnswerModel
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+
+
+
+@end
+
+@implementation ZZQuestionDetailLastAnswerUserModel
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
-                                                       @"id": @"newestListItemID",
+                                                       @"id": @"lastAnswerUserId"
                                                        }];
+    
 }
+
 +(BOOL)propertyIsOptional:(NSString*)propertyName
 {
     return YES;
 }
+
+
+
 @end
 
-@implementation ZZNewestListItemLastAnswerModel
 
-@end
-
-@implementation ZZNewestListItemLastAnswerUser
+@implementation ZZQuestionDetailTagModel
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
-                                                       @"id": @"newestListItemLastAnswerUserID",
+                                                       @"id": @"tagId"
                                                        }];
+    
 }
+
 
 +(BOOL)propertyIsOptional:(NSString*)propertyName
 {
     return YES;
 }
 
-
 @end
 
-@implementation ZZNewestListItemUserModel
+@implementation ZZQuestionDetailUserModel
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
-                                                       @"id": @"newestListItemUserID",
+                                                       @"id": @"questionDetailUserId"
                                                        }];
+    
 }
+
 
 +(BOOL)propertyIsOptional:(NSString*)propertyName
 {
@@ -69,15 +88,4 @@
 }
 
 
-
 @end
-
-@implementation ZZNewestListPageModel
-+(BOOL)propertyIsOptional:(NSString*)propertyName
-{
-    return YES;
-}
-
-
-@end
-

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		11462F751807DB81F4ACA06B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA58D1134AA266E019E13602 /* libPods.a */; };
 		CB250D481C12D93100F37028 /* ZZAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D471C12D93100F37028 /* ZZAskViewController.m */; };
+		CB250D4C1C13CEE100F37028 /* ZZQuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D4B1C13CEE100F37028 /* ZZQuestionDetailViewController.m */; };
+		CB250D521C13D19F00F37028 /* ZZQuestionDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D511C13D19F00F37028 /* ZZQuestionDetailModel.m */; };
+		CB250D551C1463C600F37028 /* ZZAnswerDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D541C1463C600F37028 /* ZZAnswerDetailModel.m */; };
 		CB2B0D441C04CE720079847C /* ZZNewestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2B0D431C04CE720079847C /* ZZNewestViewController.m */; };
 		CB32C04B1C04BD9300B6CB02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32C04A1C04BD9300B6CB02 /* main.m */; };
 		CB32C04E1C04BD9300B6CB02 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32C04D1C04BD9300B6CB02 /* AppDelegate.m */; };
@@ -58,6 +61,12 @@
 		CA58D1134AA266E019E13602 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB250D461C12D93100F37028 /* ZZAskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAskViewController.h; sourceTree = "<group>"; };
 		CB250D471C12D93100F37028 /* ZZAskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAskViewController.m; sourceTree = "<group>"; };
+		CB250D4A1C13CEE100F37028 /* ZZQuestionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZQuestionDetailViewController.h; sourceTree = "<group>"; };
+		CB250D4B1C13CEE100F37028 /* ZZQuestionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZQuestionDetailViewController.m; sourceTree = "<group>"; };
+		CB250D501C13D19F00F37028 /* ZZQuestionDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZQuestionDetailModel.h; sourceTree = "<group>"; };
+		CB250D511C13D19F00F37028 /* ZZQuestionDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZQuestionDetailModel.m; sourceTree = "<group>"; };
+		CB250D531C1463C600F37028 /* ZZAnswerDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAnswerDetailModel.h; sourceTree = "<group>"; };
+		CB250D541C1463C600F37028 /* ZZAnswerDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAnswerDetailModel.m; sourceTree = "<group>"; };
 		CB2B0D421C04CE720079847C /* ZZNewestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewestViewController.h; sourceTree = "<group>"; };
 		CB2B0D431C04CE720079847C /* ZZNewestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewestViewController.m; sourceTree = "<group>"; };
 		CB32C0461C04BD9300B6CB02 /* MIX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIX.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +168,45 @@
 				CB250D471C12D93100F37028 /* ZZAskViewController.m */,
 			);
 			name = "Ask（提问）";
+			sourceTree = "<group>";
+		};
+		CB250D491C13CEA500F37028 /* QuestionDetail (问题详情) */ = {
+			isa = PBXGroup;
+			children = (
+				CB250D4A1C13CEE100F37028 /* ZZQuestionDetailViewController.h */,
+				CB250D4B1C13CEE100F37028 /* ZZQuestionDetailViewController.m */,
+			);
+			name = "QuestionDetail (问题详情)";
+			sourceTree = "<group>";
+		};
+		CB250D4D1C13D12200F37028 /* Newest */ = {
+			isa = PBXGroup;
+			children = (
+				CBD1BB511C12A5AF00D977F1 /* ZZNewestListModel.h */,
+				CBD1BB521C12A5AF00D977F1 /* ZZNewestListModel.m */,
+				CBD1BB581C12B2A100D977F1 /* ZZNewestListItem.h */,
+				CBD1BB591C12B2A100D977F1 /* ZZNewestListItem.m */,
+			);
+			name = Newest;
+			sourceTree = "<group>";
+		};
+		CB250D4E1C13D15C00F37028 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				CB250D4D1C13D12200F37028 /* Newest */,
+			);
+			name = Question;
+			sourceTree = "<group>";
+		};
+		CB250D4F1C13D16C00F37028 /* QuestionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CB250D501C13D19F00F37028 /* ZZQuestionDetailModel.h */,
+				CB250D511C13D19F00F37028 /* ZZQuestionDetailModel.m */,
+				CB250D531C1463C600F37028 /* ZZAnswerDetailModel.h */,
+				CB250D541C1463C600F37028 /* ZZAnswerDetailModel.m */,
+			);
+			name = QuestionDetail;
 			sourceTree = "<group>";
 		};
 		CB2B0D411C04CE4F0079847C /* Question(问题) */ = {
@@ -293,6 +341,7 @@
 		CB32C0761C04C22200B6CB02 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CB250D491C13CEA500F37028 /* QuestionDetail (问题详情) */,
 				CB987FD51C129E030013B3E0 /* Base 基类 */,
 				CB250D451C12D89500F37028 /* Ask（提问） */,
 				CB2B0D411C04CE4F0079847C /* Question(问题) */,
@@ -346,10 +395,8 @@
 			isa = PBXGroup;
 			children = (
 				CBD1BB541C12A61400D977F1 /* Base */,
-				CBD1BB511C12A5AF00D977F1 /* ZZNewestListModel.h */,
-				CBD1BB521C12A5AF00D977F1 /* ZZNewestListModel.m */,
-				CBD1BB581C12B2A100D977F1 /* ZZNewestListItem.h */,
-				CBD1BB591C12B2A100D977F1 /* ZZNewestListItem.m */,
+				CB250D4F1C13D16C00F37028 /* QuestionDetail */,
+				CB250D4E1C13D15C00F37028 /* Question */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -566,6 +613,8 @@
 			files = (
 				CB987FD81C129E350013B3E0 /* ZZViewController.m in Sources */,
 				CB34D7751C06F35B0081C4FB /* EXTScope.m in Sources */,
+				CB250D4C1C13CEE100F37028 /* ZZQuestionDetailViewController.m in Sources */,
+				CB250D521C13D19F00F37028 /* ZZQuestionDetailModel.m in Sources */,
 				CB34D76E1C06EDB70081C4FB /* ZZHottestViewController.m in Sources */,
 				CB32C0791C04C24700B6CB02 /* ZZQuestionViewController.m in Sources */,
 				CB250D481C12D93100F37028 /* ZZAskViewController.m in Sources */,
@@ -582,6 +631,7 @@
 				CB34D7711C06EE990081C4FB /* ZZunAnsweredViewController.m in Sources */,
 				CB34D7791C06FCF60081C4FB /* ZZNewestCell.m in Sources */,
 				CB32C07C1C04C26800B6CB02 /* ZZArticleViewController.m in Sources */,
+				CB250D551C1463C600F37028 /* ZZAnswerDetailModel.m in Sources */,
 				CB34D7671C06E42B0081C4FB /* ZZHttpClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
