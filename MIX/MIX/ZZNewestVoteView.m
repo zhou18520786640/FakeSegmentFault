@@ -22,7 +22,7 @@
 @implementation ZZNewestVoteView
 
 + (ZZNewestVoteView *)voteView{
-    ZZNewestVoteView *voteView = [[ZZNewestVoteView alloc] initWithFrame:CGRectMake(0, 0, 27, 30)];
+    ZZNewestVoteView *voteView = [[ZZNewestVoteView alloc] init];
     voteView.backgroundColor = [UIColor clearColor];
     voteView.layer.cornerRadius = 2;
     

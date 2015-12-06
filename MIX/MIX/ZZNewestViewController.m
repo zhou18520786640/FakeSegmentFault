@@ -38,9 +38,12 @@
     @weakify(self);
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self)
+        NSLog(@"do");
         if (self.isPageLoading == NO) {
             self.page = 1;
             [self refreshDataWithPage:self.page];
+        }else{
+            [self.tableView.header endRefreshing];
         }
     }];
     [self.view addSubview:self.tableView];
@@ -52,12 +55,16 @@
 
 
     MJRefreshBackNormalFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
+        @strongify(self)
         if(self.isLastPage == NO){ // 如果不是是最后一页的话
             if(self.isPageLoading == NO){
                 self.page += 1;
                 [self refreshDataWithPage:self.page];
+            }else{
+                [self.tableView.footer endRefreshing];
             }
         }else{
+            [self.tableView.footer endRefreshing];
             [self showText:@"没有数据了"];
         }
 

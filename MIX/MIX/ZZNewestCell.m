@@ -91,7 +91,7 @@
 
 - (ZZNewestVoteView *)voteView{
     if (_voteView == nil) {
-        _voteView = [[ZZNewestVoteView alloc] init];
+        _voteView = [ZZNewestVoteView voteView];
         [self.contentView addSubview:_voteView];
     }
     return _voteView;

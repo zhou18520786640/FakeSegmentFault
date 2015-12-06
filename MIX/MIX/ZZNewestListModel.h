@@ -11,8 +11,6 @@
 
 
 
-
-
 @class ZZNewestListDataModel;
 
 @interface ZZNewestListModel : ZZBaseResponseModel
