@@ -15,13 +15,22 @@
  *  @param str 显示文案
  */
 - (void)showText:(NSString*)str;
+
+/**
+ *  显示loading
+ */
+- (void)showLoading;
+
+/**
+ *  隐藏loading
+ */
+- (void)hideLoading;
 /**
  *  设置titleView,封装方法供子类使用
  *
  *  @param titles 标题
  */
 - (void)configureTitles:(NSString *)titles;
-
 
 
 

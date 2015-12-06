@@ -9,6 +9,8 @@
 #import "ZZViewController.h"
 #import "MBProgressHUD.h"
 
+// 使用一个静态类来封装
+static MBProgressHUD *loadingHud = nil;
 
 @interface ZZViewController ()
 @end
@@ -32,6 +34,22 @@
         [hud hide:YES afterDelay:1.5];
     }
     
+}
+
+- (void)showLoading {
+    if (!loadingHud) {
+        loadingHud = [[MBProgressHUD alloc] initWithView:self.view];
+        loadingHud.mode = MBProgressHUDModeIndeterminate;
+    }
+    
+    loadingHud.removeFromSuperViewOnHide = YES;
+    [self.view addSubview:loadingHud];
+    [loadingHud show:YES];
+}
+
+- (void)hideLoading {
+    [loadingHud hide:YES];
+    loadingHud = nil;
 }
 
 

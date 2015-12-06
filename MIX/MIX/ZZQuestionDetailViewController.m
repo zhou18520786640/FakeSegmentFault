@@ -29,27 +29,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureTitles:@"问题详情"];
-    
     NSString *serviceName = [NSString stringWithFormat:@"question/%@",self.questionId];
-    
     NSMutableDictionary  *parameters = [NSMutableDictionary dictionary];
-
-    @weakify(self);
     parameters[@"token"] = @"2b3aa3e88894040e148a7ad740185173";
-    
+    [self showLoading];
+    @weakify(self);
     [[ZZHttpClient sharedHTTPClient] GET:serviceName parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         @strongify(self);
+        [self hideLoading];
+        
         ZZQuestionDetailModel *questionDetailModel = [[ZZQuestionDetailModel alloc] initWithDictionary:responseObject error:nil];
         if (questionDetailModel.status == 0) {
             
         }else{
             [self handleQuestionDetailResponseFailure];
         }
-        
-        
-        
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         @strongify(self);
+        [self hideLoading];
         [self handleQuestionDetailResponseFailure];
     }];
     
@@ -59,12 +56,6 @@
 - (void)handleQuestionDetailResponseFailure{
 
 
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 
