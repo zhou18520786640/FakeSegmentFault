@@ -17,6 +17,10 @@ static MBProgressHUD *loadingHud = nil;
 
 @implementation ZZViewController
 
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+}
 
 
 - (void)showText:(NSString*)str{

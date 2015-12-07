@@ -10,6 +10,8 @@
 #import "ZZHttpClient.h"
 #import "EXTScope.h"
 #import "ZZQuestionDetailModel.h"
+#import <RDVTabBarController/RDVTabBarController.h>
+#import <RDVTabBarController/RDVTabBarItem.h>
 
 @interface ZZQuestionDetailViewController ()
 // 服务名部分数据
@@ -28,6 +30,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.rdv_tabBarController setTabBarHidden:YES animated:YES];
     [self configureTitles:@"问题详情"];
     NSString *serviceName = [NSString stringWithFormat:@"question/%@",self.questionId];
     NSMutableDictionary  *parameters = [NSMutableDictionary dictionary];

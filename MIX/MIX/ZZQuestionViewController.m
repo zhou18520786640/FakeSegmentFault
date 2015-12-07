@@ -15,6 +15,8 @@
 #import "EXTScope.h"
 #import "ZZAskViewController.h"
 #import "ZZQuestionDetailViewController.h"
+#import <RDVTabBarController/RDVTabBarController.h>
+#import <RDVTabBarController/RDVTabBarItem.h>
 
 @interface ZZQuestionViewController ()<UIScrollViewDelegate,ZZNewestViewControllerDelegate>
 @property (nonatomic, strong) UIScrollView *helperScrollView;
@@ -32,7 +34,6 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-
 
 
     
@@ -101,6 +102,11 @@
     [self.helperScrollView addSubview:unAnswerViewController.view];
 }
 
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.rdv_tabBarController setTabBarHidden:NO animated:NO];
+}
 
 #pragma  mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
