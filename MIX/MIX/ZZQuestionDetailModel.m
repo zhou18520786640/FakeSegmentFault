@@ -10,7 +10,10 @@
 
 @implementation ZZQuestionDetailModel
 
-
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
 
 
 @end
@@ -96,4 +99,21 @@
 }
 
 
+@end
+
+@implementation ZZQuestionDetailTagSimilarTagModel
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{
+                                                       @"id": @"similarTagsId",
+                                                       @"name": @"similarTagsName"}];
+    
+}
+
+
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
 @end

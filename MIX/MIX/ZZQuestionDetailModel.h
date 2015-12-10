@@ -189,13 +189,22 @@
 
 @protocol ZZQuestionDetailTagModel @end;
 
+@protocol ZZQuestionDetailTagSimilarTagModel;
+
 @interface ZZQuestionDetailTagModel : JSONModel
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, copy) NSString *tagId; // mapper id
 @property (nonatomic, copy) NSString *thumbnailUrl; // 略缩图
 @property (nonatomic, copy) NSString *iconUrl; //icon url
-@property (nonatomic, copy) NSString *similarTags; //相似的tag
+@property (nonatomic, copy) NSArray<ZZQuestionDetailTagSimilarTagModel>*similarTags; //相似的tag
+@end
+
+@protocol ZZQuestionDetailTagSimilarTagModel @end;
+
+@interface ZZQuestionDetailTagSimilarTagModel : JSONModel
+@property (nonatomic, strong) NSString *similarTagsId; // mapper id
+@property (nonatomic, strong) NSString *similarTagsName; // mapper name
 @end
 
 
