@@ -91,8 +91,12 @@
     [self refreshContentWebView:questionDetailModelData];
 }
 
+// 刷新webview
 - (void)refreshContentWebView:(ZZQuestionDetailDataModel *)questionDetailModelData{
-    [self.contentWebView loadHTMLString:questionDetailModelData.parsedText baseURL:nil];
+    NSString *parseTitle = [NSString stringWithFormat:@"<h4>%@</h4>",questionDetailModelData.title];
+    NSString *HTMLString = [NSString stringWithFormat:@"%@%@",parseTitle,questionDetailModelData.parsedText];
+    
+    [self.contentWebView loadHTMLString:HTMLString baseURL:nil];
 }
 
 
