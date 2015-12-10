@@ -44,7 +44,7 @@
         
         ZZQuestionDetailModel *questionDetailModel = [[ZZQuestionDetailModel alloc] initWithDictionary:responseObject error:nil];
         if (questionDetailModel.status == 0) {
-            
+            [self handleQuestionDetailResponseSuccess:questionDetailModel];
         }else{
             [self handleQuestionDetailResponseFailure];
         }
@@ -56,12 +56,17 @@
     
 }
 
-
+// !!!后处理失败的情况
 - (void)handleQuestionDetailResponseFailure{
 
 
 }
 
+// 处理成功的情况
+- (void)handleQuestionDetailResponseSuccess:(ZZQuestionDetailModel *)questionDetailModel{
+    ZZQuestionDetailDataModel *data = questionDetailModel.data;
+
+}
 
 
 @end

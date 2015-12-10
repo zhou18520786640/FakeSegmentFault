@@ -10,6 +10,13 @@
 
 @implementation ZZQuestionDetailModel
 
+
+
+
+@end
+
+@implementation ZZQuestionDetailDataModel
+
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
@@ -22,6 +29,7 @@
 {
     return YES;
 }
+
 
 @end
 
