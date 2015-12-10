@@ -23,7 +23,20 @@
 @protocol ZZQuestionDetailTagModel;
 @class ZZQuestionDetailUserModel;
 
+
+
+
+@class ZZQuestionDetailDataModel;
+
 @interface ZZQuestionDetailModel : ZZBaseResponseModel
+
+@property (nonatomic, strong) ZZQuestionDetailDataModel *data;
+
+@end
+
+
+
+@interface ZZQuestionDetailDataModel : JSONModel
 /**
  *  问题详情ID
  */
@@ -127,6 +140,7 @@
 
 @end
 
+
 //------------------------------------------ZZQuestionDetailLastAnswerModel ----------------------
 //        "lastAnswer": {
 //            "user": {
@@ -137,6 +151,10 @@
 //            "createdDate": "5 \u5206\u949f\u524d",
 //            "url": "\/q\/1010000004105910\/a-1020000004105962"
 //        }
+
+
+
+
 
 @class ZZQuestionDetailLastAnswerUserModel;
 
