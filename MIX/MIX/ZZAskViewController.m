@@ -20,13 +20,13 @@
     [self configureTitles:@"提问"];
     
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 0, 44, 44);
+    leftButton.frame = CGRectMake(0, 0, 44, 44);
     [leftButton setTitle:@"关闭" forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:18];
+    leftButton.titleLabel.font = [UIFont systemFontOfSize:18];
     [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 
     [leftButton addTarget:self action:@selector(buttonDidPressed) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
 }
 
 - (void)didReceiveMemoryWarning {
