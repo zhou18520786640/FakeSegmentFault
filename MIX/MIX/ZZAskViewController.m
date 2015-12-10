@@ -25,7 +25,7 @@
     leftButton.titleLabel.font = [UIFont systemFontOfSize:18];
     [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 
-    [leftButton addTarget:self action:@selector(buttonDidPressed) forControlEvents:UIControlEventTouchUpInside];
+    [leftButton addTarget:self action:@selector(leftButtonDidPressed) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
 }
 
