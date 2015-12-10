@@ -37,9 +37,9 @@
     // TODO:改变｜为中心小圆点
     NSString *text;
     if (answerTime.length > 0) {
-       text = [NSString stringWithFormat:@"%@|%@",user,answerTime];
+       text = [NSString stringWithFormat:@"%@•%@",user,answerTime];
     }else{
-       text = [NSString stringWithFormat:@"%@|刚刚",user];
+       text = [NSString stringWithFormat:@"%@•刚刚",user];
     }
     
     NSString *title = newestListItem.title;
