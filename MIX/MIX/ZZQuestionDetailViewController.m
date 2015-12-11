@@ -45,11 +45,17 @@
 - (void)configureWebView{
     self.contentWebView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     // 去白边
+    self.contentWebView.backgroundColor = [UIColor redColor];
     for (id v in self.contentWebView.subviews) {
         if ([v isKindOfClass:[UIScrollView class]]) {
-            [v setBounces:NO];
+            UIScrollView *scrollView = (UIScrollView *)v;
+            scrollView.showsVerticalScrollIndicator = NO;
+//            [v setBounces:NO];
+            
         }
     }
+    
+
     [self.view addSubview:self.contentWebView];
 
 
