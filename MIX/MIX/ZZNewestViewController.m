@@ -31,6 +31,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+
+    
     self.view.backgroundColor = [UIColor clearColor];
     self.tableView = [[UITableView alloc] init];
     self.tableView.delegate = self;
@@ -108,6 +111,8 @@
 
 
 }
+
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
      ZZNewestCell *newestCell = (ZZNewestCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];

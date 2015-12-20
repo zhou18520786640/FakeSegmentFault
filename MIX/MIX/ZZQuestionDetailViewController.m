@@ -12,11 +12,14 @@
 #import "ZZQuestionDetailModel.h"
 #import <RDVTabBarController/RDVTabBarController.h>
 #import <RDVTabBarController/RDVTabBarItem.h>
+#import "ZZBrowerViewController.h"
 
-@interface ZZQuestionDetailViewController ()
+@interface ZZQuestionDetailViewController ()<UIWebViewDelegate>
 // 服务名部分数据
 @property (nonatomic, copy) NSString *questionId;
 @property (nonatomic, strong) UIWebView *contentWebView;
+
+@property (nonatomic, copy) NSString *parsedText;
 @end
 
 @implementation ZZQuestionDetailViewController
@@ -44,6 +47,7 @@
 // 配置webview
 - (void)configureWebView{
     self.contentWebView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    self.contentWebView.delegate = self;
     // 去白边
     self.contentWebView.backgroundColor = [UIColor redColor];
     for (id v in self.contentWebView.subviews) {
@@ -94,17 +98,47 @@
 // 处理成功的情况
 - (void)handleQuestionDetailResponseSuccess:(ZZQuestionDetailModel *)questionDetailModel{
     ZZQuestionDetailDataModel *questionDetailModelData = questionDetailModel.data;
+
     [self refreshContentWebView:questionDetailModelData];
 }
 
 // 刷新webview
 - (void)refreshContentWebView:(ZZQuestionDetailDataModel *)questionDetailModelData{
-    NSString *parseTitle = [NSString stringWithFormat:@"<h4>%@</h4>",questionDetailModelData.title];
-    NSString *parseNameAndRank = [NSString stringWithFormat:@"<h5>%@ %@ · %@</h5>",questionDetailModelData.user.name,questionDetailModelData.user.rank,questionDetailModelData.createdDate];
+    NSString *parseTitle = [NSString stringWithFormat:@"<h3>%@</h3>",questionDetailModelData.title];
+    NSString *parseNameAndRank = [NSString stringWithFormat:@"<h4>%@ %@ · %@</h4>",questionDetailModelData.user.name,questionDetailModelData.user.rank,questionDetailModelData.createdDate];
     NSString *HTMLString = [NSString stringWithFormat:@"%@%@%@",parseTitle,parseNameAndRank,questionDetailModelData.parsedText];
     
+    self.parsedText = questionDetailModelData.parsedText;
+    
+    // 链接mainBundle中的CSS文件
+    NSURL *cssURL = [[NSBundle mainBundle] URLForResource:@"questionDetail" withExtension:@"css"];
+    HTMLString = [NSString stringWithFormat:@"<link rel=\"stylesheet\" href=\"%@\">%@",cssURL,HTMLString];
+//    NSURL *baseURL = [NSURL URLWithStr4ing:@"http://sfault-image.b0.upaiyun.com"];
     [self.contentWebView loadHTMLString:HTMLString baseURL:nil];
 }
 
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+
+
+    // 层层递进的三个条件
+    // 1.是contentWebView
+    // 2.是点击事件
+    // 3.是属于问题那里的链接
+    if (webView == self.contentWebView ) {
+        if (navigationType == UIWebViewNavigationTypeLinkClicked) {
+            if ([self.parsedText containsString:request.URL.absoluteString]) {
+                ZZBrowerViewController *webViewController = [[ZZBrowerViewController alloc] initWithRequest:request];
+                UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:webViewController];
+                [self presentViewController:navigationController animated:YES completion:nil];
+             
+                return NO;
+            }
+        }
+    }
+
+    
+    return YES;
+}
 
 @end

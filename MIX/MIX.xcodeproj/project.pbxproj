@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11462F751807DB81F4ACA06B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA58D1134AA266E019E13602 /* libPods.a */; };
+		CB06F0B61C263F3C003003EC /* questionDetail.css in Resources */ = {isa = PBXBuildFile; fileRef = CB06F0B51C263F3B003003EC /* questionDetail.css */; };
 		CB250D481C12D93100F37028 /* ZZAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D471C12D93100F37028 /* ZZAskViewController.m */; };
 		CB250D4C1C13CEE100F37028 /* ZZQuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D4B1C13CEE100F37028 /* ZZQuestionDetailViewController.m */; };
 		CB250D521C13D19F00F37028 /* ZZQuestionDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D511C13D19F00F37028 /* ZZQuestionDetailModel.m */; };
@@ -33,6 +34,7 @@
 		CB34D7791C06FCF60081C4FB /* ZZNewestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34D7781C06FCF60081C4FB /* ZZNewestCell.m */; };
 		CB34D7801C070BE20081C4FB /* ZZNewestVoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34D77F1C070BE20081C4FB /* ZZNewestVoteView.m */; };
 		CB987FD81C129E350013B3E0 /* ZZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB987FD71C129E350013B3E0 /* ZZViewController.m */; };
+		CBA142E71C27139B003D8186 /* ZZBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA142E61C27139B003D8186 /* ZZBrowerViewController.m */; };
 		CBD1BB531C12A5AF00D977F1 /* ZZNewestListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1BB521C12A5AF00D977F1 /* ZZNewestListModel.m */; };
 		CBD1BB571C12A62E00D977F1 /* ZZBaseResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1BB561C12A62E00D977F1 /* ZZBaseResponseModel.m */; };
 		CBD1BB5A1C12B2A100D977F1 /* ZZNewestListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1BB591C12B2A100D977F1 /* ZZNewestListItem.m */; };
@@ -59,6 +61,7 @@
 		2761A9352F8ACD5BF24D45AF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		90E4E36E01A9F73F00FAE41D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CA58D1134AA266E019E13602 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB06F0B51C263F3B003003EC /* questionDetail.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = questionDetail.css; sourceTree = "<group>"; };
 		CB250D461C12D93100F37028 /* ZZAskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAskViewController.h; sourceTree = "<group>"; };
 		CB250D471C12D93100F37028 /* ZZAskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAskViewController.m; sourceTree = "<group>"; };
 		CB250D4A1C13CEE100F37028 /* ZZQuestionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZQuestionDetailViewController.h; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 		CB34D77F1C070BE20081C4FB /* ZZNewestVoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewestVoteView.m; sourceTree = "<group>"; };
 		CB987FD61C129E350013B3E0 /* ZZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZViewController.h; sourceTree = "<group>"; };
 		CB987FD71C129E350013B3E0 /* ZZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZViewController.m; sourceTree = "<group>"; };
+		CBA142E51C27139B003D8186 /* ZZBrowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBrowerViewController.h; sourceTree = "<group>"; };
+		CBA142E61C27139B003D8186 /* ZZBrowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBrowerViewController.m; sourceTree = "<group>"; };
 		CBD1BB511C12A5AF00D977F1 /* ZZNewestListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewestListModel.h; sourceTree = "<group>"; };
 		CBD1BB521C12A5AF00D977F1 /* ZZNewestListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewestListModel.m; sourceTree = "<group>"; };
 		CBD1BB551C12A62E00D977F1 /* ZZBaseResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBaseResponseModel.h; sourceTree = "<group>"; };
@@ -299,6 +304,7 @@
 				CB32C04C1C04BD9300B6CB02 /* AppDelegate.h */,
 				CB32C04D1C04BD9300B6CB02 /* AppDelegate.m */,
 				CB32C0491C04BD9300B6CB02 /* Supporting Files */,
+				CB06F0B51C263F3B003003EC /* questionDetail.css */,
 			);
 			path = MIX;
 			sourceTree = "<group>";
@@ -341,6 +347,7 @@
 		CB32C0761C04C22200B6CB02 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CBA142E41C271368003D8186 /* Brower(浏览器) */,
 				CB250D491C13CEA500F37028 /* QuestionDetail (问题详情) */,
 				CB987FD51C129E030013B3E0 /* Base 基类 */,
 				CB250D451C12D89500F37028 /* Ask（提问） */,
@@ -408,6 +415,15 @@
 				CB987FD71C129E350013B3E0 /* ZZViewController.m */,
 			);
 			name = "Base 基类";
+			sourceTree = "<group>";
+		};
+		CBA142E41C271368003D8186 /* Brower(浏览器) */ = {
+			isa = PBXGroup;
+			children = (
+				CBA142E51C27139B003D8186 /* ZZBrowerViewController.h */,
+				CBA142E61C27139B003D8186 /* ZZBrowerViewController.m */,
+			);
+			name = "Brower(浏览器)";
 			sourceTree = "<group>";
 		};
 		CBD1BB4A1C12A1B000D977F1 /* Service */ = {
@@ -537,6 +553,7 @@
 			files = (
 				CB32C0501C04BD9300B6CB02 /* Assets.xcassets in Resources */,
 				CB32C0531C04BD9300B6CB02 /* LaunchScreen.storyboard in Resources */,
+				CB06F0B61C263F3C003003EC /* questionDetail.css in Resources */,
 				CB34D7611C06CEAE0081C4FB /* tabbar_selected_background.png in Resources */,
 				CB34D7621C06CEAE0081C4FB /* tabbar_selected_background@2x.png in Resources */,
 			);
@@ -627,6 +644,7 @@
 				CBD1BB5A1C12B2A100D977F1 /* ZZNewestListItem.m in Sources */,
 				CB2B0D441C04CE720079847C /* ZZNewestViewController.m in Sources */,
 				CB32C0851C04C28F00B6CB02 /* ZZMeViewController.m in Sources */,
+				CBA142E71C27139B003D8186 /* ZZBrowerViewController.m in Sources */,
 				CB32C0821C04C28500B6CB02 /* ZZSearchViewController.m in Sources */,
 				CB34D7711C06EE990081C4FB /* ZZunAnsweredViewController.m in Sources */,
 				CB34D7791C06FCF60081C4FB /* ZZNewestCell.m in Sources */,
