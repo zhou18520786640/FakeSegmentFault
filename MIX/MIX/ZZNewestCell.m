@@ -44,11 +44,15 @@
     
     NSString *title = newestListItem.title;
     
-    [self layoutWithTitle:title Text:text vote:nil];
+    [self layoutWithTitle:title
+                     Text:text
+               isAccepted:newestListItem.isAccepted
+             answersCount:newestListItem.answers
+               viewsCount:newestListItem.views];
 }
 
 
-- (void)layoutWithTitle:(NSString *)title Text:(NSString *)text vote:(NSString *)vote{
+- (void)layoutWithTitle:(NSString *)title Text:(NSString *)text isAccepted:(BOOL)isAccepted answersCount:(NSString *)answersCount viewsCount:(NSString *)viewsCount{
     CGFloat viewWidth = [UIScreen mainScreen].bounds.size.width;
     CGFloat x = 61;
     self.userAndTimeLabel.frame = CGRectMake(x, 19, viewWidth - 61, 13);
@@ -63,7 +67,12 @@
     self.contentView.frame = CGRectMake(0, 0, viewWidth, CGRectGetMaxY(self.titleLabel.frame) + 14);
     self.frame = CGRectMake(0, 0, viewWidth, CGRectGetMaxY(self.titleLabel.frame) + 14);
     self.lineView.frame = CGRectMake(15, self.bounds.size.height - 1, viewWidth - 15, 1);
+    
 
+    self.voteView.frame = CGRectMake(15, 0, 35, 39);
+    self.voteView.center = CGPointMake(self.voteView.center.x, self.contentView.bounds.size.height * 0.5);
+    [self.voteView updateWithReviews:viewsCount Anwsered:answersCount isAccepted:isAccepted];
+    
 }
 
 

@@ -11,6 +11,6 @@
 @interface ZZNewestVoteView : UIView
 + (ZZNewestVoteView *)voteView;
 - (void)updateWithReviews:(NSString *)reviews
-               unAnwsered:(BOOL)unAnwsered
+               Anwsered:(NSString *)Anwsered
                isAccepted:(BOOL)isAccepted;
 @end
