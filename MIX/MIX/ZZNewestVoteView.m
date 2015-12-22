@@ -27,7 +27,7 @@
 + (ZZNewestVoteView *)voteView{
     ZZNewestVoteView *voteView = [[ZZNewestVoteView alloc] init];
     voteView.backgroundColor = [UIColor clearColor];
-    voteView.layer.cornerRadius = 2;
+    voteView.layer.cornerRadius = 3;
     
     return voteView;
 }
@@ -37,7 +37,7 @@
                isAccepted:(BOOL)isAccepted{
     
     // 投票数目
-    self.voteNumberLabel.text = reviews;
+    self.voteNumberLabel.text = Anwsered;
     
     
     //****设置背景色和状态****
@@ -67,6 +67,18 @@
     }
     return _voteNumberLabel;
 
+}
+
+- (UILabel *)voteStatusLabel{
+    if (_voteStatusLabel == nil) {
+        _voteStatusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 24, self.bounds.size.width, 12)];
+        _voteStatusLabel.backgroundColor = [UIColor clearColor];
+        _voteStatusLabel.font = [UIFont systemFontOfSize:12];
+        _voteStatusLabel.textColor = [UIColor whiteColor];
+        _voteStatusLabel.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:_voteStatusLabel];
+    }
+    return _voteStatusLabel;
 }
 
 @end

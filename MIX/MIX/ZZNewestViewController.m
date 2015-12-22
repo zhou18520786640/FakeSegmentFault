@@ -87,8 +87,7 @@
     ZZNewestCell *newestCell = [tableView dequeueReusableCellWithIdentifier:tableViewReuseIdentifer];
     if (newestCell == nil) {
         newestCell = [[ZZNewestCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableViewReuseIdentifer];
-//        newestCell.selectedBackgroundView = [[UIView alloc] initWithFrame:newestCell.frame];
-//        newestCell.selectedBackgroundView.backgroundColor = UIColorFromRGB(0x)
+        newestCell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
 
     
@@ -125,7 +124,7 @@
     NSMutableDictionary  *parameters = [NSMutableDictionary dictionary];
     parameters[@"page"] = @(page);
     @weakify(self);
-    parameters[@"token"] = @"2b3aa3e88894040e148a7ad740185173";
+//    parameters[@"token"] = @"2b3aa3e88894040e148a7ad740185173";
     self.isPageLoading = YES;
     [[ZZHttpClient sharedHTTPClient] GET:@"/question/newest" parameters:parameters success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
         @strongify(self);

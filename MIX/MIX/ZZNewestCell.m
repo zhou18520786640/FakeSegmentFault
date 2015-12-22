@@ -69,7 +69,7 @@
     self.lineView.frame = CGRectMake(15, self.bounds.size.height - 1, viewWidth - 15, 1);
     
 
-    self.voteView.frame = CGRectMake(15, 0, 35, 39);
+    self.voteView.frame = CGRectMake(15, 0, 35, 41);
     self.voteView.center = CGPointMake(self.voteView.center.x, self.contentView.bounds.size.height * 0.5);
     [self.voteView updateWithReviews:viewsCount Anwsered:answersCount isAccepted:isAccepted];
     
