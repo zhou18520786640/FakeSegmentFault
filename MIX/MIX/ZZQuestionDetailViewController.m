@@ -105,7 +105,7 @@
 // 刷新webview
 - (void)refreshContentWebView:(ZZQuestionDetailDataModel *)questionDetailModelData{
     NSString *parseTitle = [NSString stringWithFormat:@"<h3>%@</h3>",questionDetailModelData.title];
-    NSString *parseNameAndRank = [NSString stringWithFormat:@"<h4><span>%@ %@</span> · %@</h4>",questionDetailModelData.user.name,questionDetailModelData.user.rank,questionDetailModelData.createdDate];
+    NSString *parseNameAndRank = [NSString stringWithFormat:@"<h4 id = \"time\"><span>%@ %@</span> · %@</h4>",questionDetailModelData.user.name,questionDetailModelData.user.rank,questionDetailModelData.createdDate];
     NSString *HTMLString = [NSString stringWithFormat:@"%@%@%@",parseTitle,parseNameAndRank,questionDetailModelData.parsedText];
     
     self.parsedText = questionDetailModelData.parsedText;
