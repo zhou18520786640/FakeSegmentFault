@@ -49,15 +49,15 @@
     self.contentWebView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     self.contentWebView.delegate = self;
     // 去白边
-    self.contentWebView.backgroundColor = [UIColor redColor];
-    for (id v in self.contentWebView.subviews) {
-        if ([v isKindOfClass:[UIScrollView class]]) {
-            UIScrollView *scrollView = (UIScrollView *)v;
-            scrollView.showsVerticalScrollIndicator = NO;
+//    self.contentWebView.backgroundColor = [UIColor redColor];
+//    for (id v in self.contentWebView.subviews) {
+//        if ([v isKindOfClass:[UIScrollView class]]) {
+//            UIScrollView *scrollView = (UIScrollView *)v;
+//            scrollView.showsVerticalScrollIndicator = YES;
 //            [v setBounces:NO];
-            
-        }
-    }
+//            
+//        }
+//    }
     
 
     [self.view addSubview:self.contentWebView];
@@ -104,9 +104,35 @@
 
 // 刷新webview
 - (void)refreshContentWebView:(ZZQuestionDetailDataModel *)questionDetailModelData{
+    
+    
     NSString *parseTitle = [NSString stringWithFormat:@"<h3>%@</h3>",questionDetailModelData.title];
     NSString *parseNameAndRank = [NSString stringWithFormat:@"<h4 id = \"time\"><span>%@ %@</span> · %@</h4>",questionDetailModelData.user.name,questionDetailModelData.user.rank,questionDetailModelData.createdDate];
     NSString *HTMLString = [NSString stringWithFormat:@"%@%@%@",parseTitle,parseNameAndRank,questionDetailModelData.parsedText];
+    
+    
+    
+    
+    NSMutableString *tagHTML = [[NSMutableString alloc] init];
+    for (NSUInteger i = 0; i < questionDetailModelData.tags.count; i++) {
+        ZZQuestionDetailTagModel *tag = questionDetailModelData.tags[i];
+        NSString *name = tag.name;
+        if (i == 0) {
+            [tagHTML appendString:@"<p class = \"tag\" >"];
+        }
+            [tagHTML appendString:name];
+            [tagHTML appendString:@" "];
+        if (i == questionDetailModelData.tags.count - 1) {
+            [tagHTML appendString:@"</p>"];
+        }
+    }
+    
+    HTMLString = [NSString stringWithFormat:@"%@%@",HTMLString, tagHTML];
+    
+    
+    
+    
+    
     
     self.parsedText = questionDetailModelData.parsedText;
     
