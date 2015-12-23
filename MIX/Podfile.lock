@@ -39,6 +39,14 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
+  - ShareSDK3 (3.1.4):
+    - ShareSDK3/libraries (= 3.1.4)
+  - ShareSDK3/libraries (3.1.4)
+  - ShareSDK3/ShareSDKPlatforms/GooglePlus (3.1.4)
+  - ShareSDK3/ShareSDKPlatforms/QQ (3.1.4)
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo (3.1.4)
+  - ShareSDK3/ShareSDKPlatforms/WeChat (3.1.4)
+  - ShareSDK3/ShareSDKUI (3.1.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
@@ -49,6 +57,12 @@ DEPENDENCIES:
   - MJRefresh
   - RDVTabBarController
   - SDWebImage (~> 3.7.3)
+  - ShareSDK3
+  - ShareSDK3/ShareSDKPlatforms/GooglePlus
+  - ShareSDK3/ShareSDKPlatforms/QQ
+  - ShareSDK3/ShareSDKPlatforms/SinaWeibo
+  - ShareSDK3/ShareSDKPlatforms/WeChat
+  - ShareSDK3/ShareSDKUI
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
@@ -60,5 +74,6 @@ SPEC CHECKSUMS:
   MJRefresh: 0f6f5e8387970607c26080b44058b229a23065d7
   RDVTabBarController: 67794f7a7a37f8e32f046f85ac67d06ab92d624a
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  ShareSDK3: f8a79f4cc6c63e994673bc11b21674ae50a4d726
 
 COCOAPODS: 0.39.0

@@ -130,7 +130,7 @@
     HTMLString = [NSString stringWithFormat:@"%@%@",HTMLString, tagHTML];
     
     
-    
+    HTMLString = [NSString stringWithFormat:@"%@<hr />",HTMLString];
     
     
     
