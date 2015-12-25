@@ -11,6 +11,8 @@
 		CB00A7471C2B0A040032DF24 /* ZZLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A7461C2B0A040032DF24 /* ZZLoginViewController.m */; };
 		CB00A74B1C2B0ABC0032DF24 /* ZZUser.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A74A1C2B0ABC0032DF24 /* ZZUser.m */; };
 		CB00A74E1C2B0FB20032DF24 /* ZZLoginInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A74D1C2B0FB20032DF24 /* ZZLoginInputView.m */; };
+		CB00A75D1C2C2CC20032DF24 /* setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB00A75C1C2C2CC20032DF24 /* setting.plist */; };
+		CB00A7601C2C318A0032DF24 /* ZZRankView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A75F1C2C318A0032DF24 /* ZZRankView.m */; };
 		CB06F0B61C263F3C003003EC /* questionDetail.css in Resources */ = {isa = PBXBuildFile; fileRef = CB06F0B51C263F3B003003EC /* questionDetail.css */; };
 		CB250D481C12D93100F37028 /* ZZAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D471C12D93100F37028 /* ZZAskViewController.m */; };
 		CB250D4C1C13CEE100F37028 /* ZZQuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D4B1C13CEE100F37028 /* ZZQuestionDetailViewController.m */; };
@@ -27,7 +29,7 @@
 		CB32C07C1C04C26800B6CB02 /* ZZArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32C07B1C04C26800B6CB02 /* ZZArticleViewController.m */; };
 		CB32C07F1C04C27600B6CB02 /* ZZFindViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32C07E1C04C27600B6CB02 /* ZZFindViewController.m */; };
 		CB32C0821C04C28500B6CB02 /* ZZSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32C0811C04C28500B6CB02 /* ZZSearchViewController.m */; };
-		CB32C0851C04C28F00B6CB02 /* ZZMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32C0841C04C28F00B6CB02 /* ZZMeViewController.m */; };
+		CB32C0851C04C28F00B6CB02 /* ZZMyHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB32C0841C04C28F00B6CB02 /* ZZMyHomeViewController.m */; };
 		CB34D7611C06CEAE0081C4FB /* tabbar_selected_background.png in Resources */ = {isa = PBXBuildFile; fileRef = CB34D75F1C06CEAE0081C4FB /* tabbar_selected_background.png */; };
 		CB34D7621C06CEAE0081C4FB /* tabbar_selected_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB34D7601C06CEAE0081C4FB /* tabbar_selected_background@2x.png */; };
 		CB34D7671C06E42B0081C4FB /* ZZHttpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34D7661C06E42B0081C4FB /* ZZHttpClient.m */; };
@@ -70,6 +72,9 @@
 		CB00A74A1C2B0ABC0032DF24 /* ZZUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZUser.m; sourceTree = "<group>"; };
 		CB00A74C1C2B0FB20032DF24 /* ZZLoginInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZLoginInputView.h; sourceTree = "<group>"; };
 		CB00A74D1C2B0FB20032DF24 /* ZZLoginInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZLoginInputView.m; sourceTree = "<group>"; };
+		CB00A75C1C2C2CC20032DF24 /* setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setting.plist; sourceTree = "<group>"; };
+		CB00A75E1C2C318A0032DF24 /* ZZRankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZRankView.h; sourceTree = "<group>"; };
+		CB00A75F1C2C318A0032DF24 /* ZZRankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZRankView.m; sourceTree = "<group>"; };
 		CB06F0B51C263F3B003003EC /* questionDetail.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = questionDetail.css; sourceTree = "<group>"; };
 		CB250D461C12D93100F37028 /* ZZAskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAskViewController.h; sourceTree = "<group>"; };
 		CB250D471C12D93100F37028 /* ZZAskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAskViewController.m; sourceTree = "<group>"; };
@@ -102,8 +107,8 @@
 		CB32C07E1C04C27600B6CB02 /* ZZFindViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZFindViewController.m; sourceTree = "<group>"; };
 		CB32C0801C04C28500B6CB02 /* ZZSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSearchViewController.h; sourceTree = "<group>"; };
 		CB32C0811C04C28500B6CB02 /* ZZSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSearchViewController.m; sourceTree = "<group>"; };
-		CB32C0831C04C28F00B6CB02 /* ZZMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMeViewController.h; sourceTree = "<group>"; };
-		CB32C0841C04C28F00B6CB02 /* ZZMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZMeViewController.m; sourceTree = "<group>"; };
+		CB32C0831C04C28F00B6CB02 /* ZZMyHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMyHomeViewController.h; sourceTree = "<group>"; };
+		CB32C0841C04C28F00B6CB02 /* ZZMyHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZMyHomeViewController.m; sourceTree = "<group>"; };
 		CB34D75F1C06CEAE0081C4FB /* tabbar_selected_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbar_selected_background.png; sourceTree = "<group>"; };
 		CB34D7601C06CEAE0081C4FB /* tabbar_selected_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_selected_background@2x.png"; sourceTree = "<group>"; };
 		CB34D7631C06D2FB0081C4FB /* MacroDefinition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroDefinition.h; sourceTree = "<group>"; };
@@ -370,8 +375,10 @@
 		CB2B0D491C04D8A40079847C /* Me（我的） */ = {
 			isa = PBXGroup;
 			children = (
-				CB32C0831C04C28F00B6CB02 /* ZZMeViewController.h */,
-				CB32C0841C04C28F00B6CB02 /* ZZMeViewController.m */,
+				CB32C0831C04C28F00B6CB02 /* ZZMyHomeViewController.h */,
+				CB32C0841C04C28F00B6CB02 /* ZZMyHomeViewController.m */,
+				CB00A75E1C2C318A0032DF24 /* ZZRankView.h */,
+				CB00A75F1C2C318A0032DF24 /* ZZRankView.m */,
 			);
 			name = "Me（我的）";
 			sourceTree = "<group>";
@@ -427,6 +434,7 @@
 				CB34D7731C06F35B0081C4FB /* EXTScope.h */,
 				CB34D7741C06F35B0081C4FB /* EXTScope.m */,
 				CB32C04A1C04BD9300B6CB02 /* main.m */,
+				CB00A75C1C2C2CC20032DF24 /* setting.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -657,6 +665,7 @@
 				CB32C0501C04BD9300B6CB02 /* Assets.xcassets in Resources */,
 				CB32C0531C04BD9300B6CB02 /* LaunchScreen.storyboard in Resources */,
 				CB06F0B61C263F3C003003EC /* questionDetail.css in Resources */,
+				CB00A75D1C2C2CC20032DF24 /* setting.plist in Resources */,
 				CB34D7611C06CEAE0081C4FB /* tabbar_selected_background.png in Resources */,
 				CB34D7621C06CEAE0081C4FB /* tabbar_selected_background@2x.png in Resources */,
 			);
@@ -748,7 +757,7 @@
 				CB34D7801C070BE20081C4FB /* ZZNewestVoteView.m in Sources */,
 				CBD1BB5A1C12B2A100D977F1 /* ZZNewestListItem.m in Sources */,
 				CB2B0D441C04CE720079847C /* ZZNewestViewController.m in Sources */,
-				CB32C0851C04C28F00B6CB02 /* ZZMeViewController.m in Sources */,
+				CB32C0851C04C28F00B6CB02 /* ZZMyHomeViewController.m in Sources */,
 				CBA142E71C27139B003D8186 /* ZZBrowerViewController.m in Sources */,
 				CB32C0821C04C28500B6CB02 /* ZZSearchViewController.m in Sources */,
 				CB34D7711C06EE990081C4FB /* ZZunAnsweredViewController.m in Sources */,
@@ -756,6 +765,7 @@
 				CB32C07C1C04C26800B6CB02 /* ZZArticleViewController.m in Sources */,
 				CB250D551C1463C600F37028 /* ZZAnswerDetailModel.m in Sources */,
 				CB00A7471C2B0A040032DF24 /* ZZLoginViewController.m in Sources */,
+				CB00A7601C2C318A0032DF24 /* ZZRankView.m in Sources */,
 				CB34D7671C06E42B0081C4FB /* ZZHttpClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

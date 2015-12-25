@@ -283,6 +283,6 @@ return self; \
 }
 
 // Main Color
-#define kMainColor UIColorFromRGB(0x00a961)
+#define kMainColor UIColorFromRGB(0x009a61)
 
 #endif

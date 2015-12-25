@@ -13,7 +13,7 @@
 #import "ZZArticleViewController.h"
 #import "ZZFindViewController.h"
 #import "ZZSearchViewController.h"
-#import "ZZMeViewController.h"
+#import "ZZMyHomeViewController.h"
 #import "MacroDefinition.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "ZZHttpClient.h"
@@ -50,7 +50,7 @@
     UINavigationController *fourthNavigationController = [[UINavigationController alloc]
                                                           initWithRootViewController:searchViewController];
     
-    ZZMeViewController *meViewController = [[ZZMeViewController alloc] init];
+    ZZMyHomeViewController *meViewController = [[ZZMyHomeViewController alloc] init];
     UINavigationController *fifthNavigationController = [[UINavigationController alloc]
                                                           initWithRootViewController:meViewController];
     
