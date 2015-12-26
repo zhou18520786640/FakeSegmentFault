@@ -278,13 +278,6 @@
 			name = "Register(注册)";
 			sourceTree = "<group>";
 		};
-		CB00A7671C2E24E60032DF24 /* Manager(处理多个控制器间都有的逻辑) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Manager(处理多个控制器间都有的逻辑)";
-			sourceTree = "<group>";
-		};
 		CB00A76E1C2E55020032DF24 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +294,23 @@
 				CB00A7741C2E61160032DF24 /* ZZSettingViewController.m */,
 			);
 			name = "Setting (设置)";
+			sourceTree = "<group>";
+		};
+		CB00A7791C2E68DD0032DF24 /* 问题模块 */ = {
+			isa = PBXGroup;
+			children = (
+				CB250D4E1C13D15C00F37028 /* Question */,
+				CB250D4F1C13D16C00F37028 /* QuestionDetail */,
+			);
+			name = "问题模块";
+			sourceTree = "<group>";
+		};
+		CB00A77A1C2E68EE0032DF24 /* 我的模块 */ = {
+			isa = PBXGroup;
+			children = (
+				CB00A7481C2B0A860032DF24 /* Register */,
+			);
+			name = "我的模块";
 			sourceTree = "<group>";
 		};
 		CB250D451C12D89500F37028 /* Ask（提问） */ = {
@@ -441,7 +451,6 @@
 			isa = PBXGroup;
 			children = (
 				CB00A76E1C2E55020032DF24 /* Configuration */,
-				CB00A7671C2E24E60032DF24 /* Manager(处理多个控制器间都有的逻辑) */,
 				CB34D7811C0714810081C4FB /* Model(瘦model) */,
 				CB34D7641C06E3790081C4FB /* Network(网络参数封装和请求发送，错误处理) */,
 				CB32C0761C04C22200B6CB02 /* ViewController */,
@@ -543,10 +552,9 @@
 		CB34D7811C0714810081C4FB /* Model(瘦model) */ = {
 			isa = PBXGroup;
 			children = (
-				CB00A7481C2B0A860032DF24 /* Register */,
+				CB00A77A1C2E68EE0032DF24 /* 我的模块 */,
+				CB00A7791C2E68DD0032DF24 /* 问题模块 */,
 				CBD1BB541C12A61400D977F1 /* Base */,
-				CB250D4F1C13D16C00F37028 /* QuestionDetail */,
-				CB250D4E1C13D15C00F37028 /* Question */,
 			);
 			name = "Model(瘦model)";
 			sourceTree = "<group>";
@@ -928,6 +936,7 @@
 			baseConfigurationReference = 2761A9352F8ACD5BF24D45AF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MIX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhou.MIX;
@@ -941,6 +950,7 @@
 			baseConfigurationReference = 90E4E36E01A9F73F00FAE41D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MIX/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhou.MIX;
