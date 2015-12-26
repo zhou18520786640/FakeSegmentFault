@@ -43,6 +43,7 @@ static NSString * const kBaseURL = @"http://api.segmentfault.com";
     return self;
 }
 
+#pragma mark - profile
 - (void)requestUserProfileWithSuccessBlock:(SuccessBlock *)success failBlock:(FailBlock)fail{
     NSMutableDictionary  *parameters = [NSMutableDictionary dictionary];
     parameters[@"token"] = @"2b3aa3e88894040e148a7ad740185173";
@@ -55,23 +56,13 @@ static NSString * const kBaseURL = @"http://api.segmentfault.com";
 
 }
 
+- (void)requestLoginWithWithSuccessBlock:(SuccessBlock *)success failBlock:(FailBlock)fail{
+//    NSMutableDictionary *
 
-- (void)showLoading {
-    UIWindow *window = [UIApplication sharedApplication].delegate.window;
-    if (!loadingHud) {
-        loadingHud = [[MBProgressHUD alloc] initWithView:window];
-        loadingHud.mode = MBProgressHUDModeIndeterminate;
-    }
-    
-    loadingHud.removeFromSuperViewOnHide = YES;
-    [window addSubview:loadingHud];
-    [loadingHud show:YES];
 }
 
-- (void)hideLoading {
-    [loadingHud hide:YES];
-    loadingHud = nil;
-}
+
+
 
 
 

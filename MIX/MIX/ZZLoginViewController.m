@@ -24,8 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configureTitles:@"登录"];
     [self configureSubViews];
-
+    [self configureLeftBarItem];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,10 +36,22 @@
 
 - (void)configureSubViews{
     self.backgroundScrollView.contentSize = self.view.bounds.size;
-    
     [self.backgroundScrollView addSubview:self.loginInputView];
     [self.backgroundScrollView addSubview:self.loginTipLabel];
-    
+}
+
+- (void)configureLeftBarItem {
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 44, 44);
+    [button setTitle:@"关闭" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+}
+
+
+- (void)buttonDidPressed:(UIButton *)button {
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 
 }
 

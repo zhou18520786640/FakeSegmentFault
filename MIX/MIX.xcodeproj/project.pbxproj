@@ -15,6 +15,9 @@
 		CB00A7601C2C318A0032DF24 /* ZZRankView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A75F1C2C318A0032DF24 /* ZZRankView.m */; };
 		CB00A7631C2D9CEF0032DF24 /* ZZProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A7621C2D9CEF0032DF24 /* ZZProfileCell.m */; };
 		CB00A7661C2DA4510032DF24 /* ZZListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A7651C2DA4510032DF24 /* ZZListCell.m */; };
+		CB00A7711C2E55190032DF24 /* ZZConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A7701C2E55190032DF24 /* ZZConfiguration.m */; };
+		CB00A7751C2E61160032DF24 /* ZZSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A7741C2E61160032DF24 /* ZZSettingViewController.m */; };
+		CB00A7781C2E65770032DF24 /* ZZRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A7771C2E65770032DF24 /* ZZRegisterViewController.m */; };
 		CB06F0B61C263F3C003003EC /* questionDetail.css in Resources */ = {isa = PBXBuildFile; fileRef = CB06F0B51C263F3B003003EC /* questionDetail.css */; };
 		CB250D481C12D93100F37028 /* ZZAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D471C12D93100F37028 /* ZZAskViewController.m */; };
 		CB250D4C1C13CEE100F37028 /* ZZQuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D4B1C13CEE100F37028 /* ZZQuestionDetailViewController.m */; };
@@ -81,6 +84,12 @@
 		CB00A7621C2D9CEF0032DF24 /* ZZProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZProfileCell.m; sourceTree = "<group>"; };
 		CB00A7641C2DA4510032DF24 /* ZZListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZListCell.h; sourceTree = "<group>"; };
 		CB00A7651C2DA4510032DF24 /* ZZListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZListCell.m; sourceTree = "<group>"; };
+		CB00A76F1C2E55190032DF24 /* ZZConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZConfiguration.h; sourceTree = "<group>"; };
+		CB00A7701C2E55190032DF24 /* ZZConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZConfiguration.m; sourceTree = "<group>"; };
+		CB00A7731C2E61160032DF24 /* ZZSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZSettingViewController.h; sourceTree = "<group>"; };
+		CB00A7741C2E61160032DF24 /* ZZSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSettingViewController.m; sourceTree = "<group>"; };
+		CB00A7761C2E65770032DF24 /* ZZRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZRegisterViewController.h; sourceTree = "<group>"; };
+		CB00A7771C2E65770032DF24 /* ZZRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZRegisterViewController.m; sourceTree = "<group>"; };
 		CB06F0B51C263F3B003003EC /* questionDetail.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = questionDetail.css; sourceTree = "<group>"; };
 		CB250D461C12D93100F37028 /* ZZAskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAskViewController.h; sourceTree = "<group>"; };
 		CB250D471C12D93100F37028 /* ZZAskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAskViewController.m; sourceTree = "<group>"; };
@@ -220,6 +229,7 @@
 		CB00A7501C2B19160032DF24 /* 我的模块 */ = {
 			isa = PBXGroup;
 			children = (
+				CB00A7721C2E60E60032DF24 /* Setting (设置) */,
 				CB00A7551C2B1A7E0032DF24 /* Register(注册) */,
 				CB2B0D491C04D8A40079847C /* Me（我的） */,
 				CB00A7441C2B099B0032DF24 /* Login(登录) */,
@@ -262,6 +272,8 @@
 		CB00A7551C2B1A7E0032DF24 /* Register(注册) */ = {
 			isa = PBXGroup;
 			children = (
+				CB00A7761C2E65770032DF24 /* ZZRegisterViewController.h */,
+				CB00A7771C2E65770032DF24 /* ZZRegisterViewController.m */,
 			);
 			name = "Register(注册)";
 			sourceTree = "<group>";
@@ -271,6 +283,24 @@
 			children = (
 			);
 			name = "Manager(处理多个控制器间都有的逻辑)";
+			sourceTree = "<group>";
+		};
+		CB00A76E1C2E55020032DF24 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				CB00A76F1C2E55190032DF24 /* ZZConfiguration.h */,
+				CB00A7701C2E55190032DF24 /* ZZConfiguration.m */,
+			);
+			name = Configuration;
+			sourceTree = "<group>";
+		};
+		CB00A7721C2E60E60032DF24 /* Setting (设置) */ = {
+			isa = PBXGroup;
+			children = (
+				CB00A7731C2E61160032DF24 /* ZZSettingViewController.h */,
+				CB00A7741C2E61160032DF24 /* ZZSettingViewController.m */,
+			);
+			name = "Setting (设置)";
 			sourceTree = "<group>";
 		};
 		CB250D451C12D89500F37028 /* Ask（提问） */ = {
@@ -410,6 +440,7 @@
 		CB32C0481C04BD9300B6CB02 /* MIX */ = {
 			isa = PBXGroup;
 			children = (
+				CB00A76E1C2E55020032DF24 /* Configuration */,
 				CB00A7671C2E24E60032DF24 /* Manager(处理多个控制器间都有的逻辑) */,
 				CB34D7811C0714810081C4FB /* Model(瘦model) */,
 				CB34D7641C06E3790081C4FB /* Network(网络参数封装和请求发送，错误处理) */,
@@ -735,16 +766,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB987FD81C129E350013B3E0 /* ZZViewController.m in Sources */,
+				CB00A7711C2E55190032DF24 /* ZZConfiguration.m in Sources */,
 				CB34D7751C06F35B0081C4FB /* EXTScope.m in Sources */,
 				CB250D4C1C13CEE100F37028 /* ZZQuestionDetailViewController.m in Sources */,
 				CB00A74E1C2B0FB20032DF24 /* ZZLoginInputView.m in Sources */,
 				CB250D521C13D19F00F37028 /* ZZQuestionDetailModel.m in Sources */,
 				CB00A74B1C2B0ABC0032DF24 /* ZZUser.m in Sources */,
+				CB00A7751C2E61160032DF24 /* ZZSettingViewController.m in Sources */,
 				CB34D76E1C06EDB70081C4FB /* ZZHottestViewController.m in Sources */,
 				CB32C0791C04C24700B6CB02 /* ZZQuestionViewController.m in Sources */,
 				CB250D481C12D93100F37028 /* ZZAskViewController.m in Sources */,
 				CB32C04E1C04BD9300B6CB02 /* AppDelegate.m in Sources */,
 				CBD1BB571C12A62E00D977F1 /* ZZBaseResponseModel.m in Sources */,
+				CB00A7781C2E65770032DF24 /* ZZRegisterViewController.m in Sources */,
 				CBD1BB531C12A5AF00D977F1 /* ZZNewestListModel.m in Sources */,
 				CB32C04B1C04BD9300B6CB02 /* main.m in Sources */,
 				CB32C07F1C04C27600B6CB02 /* ZZFindViewController.m in Sources */,

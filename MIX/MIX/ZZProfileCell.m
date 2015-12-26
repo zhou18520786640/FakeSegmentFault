@@ -15,7 +15,8 @@
 @property (nonatomic, strong) UIImageView *profileImageView;
 @property (nonatomic, strong) UIView *backgroundProfileView;
 @property (nonatomic, strong) UIView *rankView;
-
+// 用户名，未登录且未注册时显示默认文案"登录/注册"
+@property (nonatomic, strong) UILabel *userNameAndLoginTipLabel;
 @end
 
 
@@ -36,6 +37,15 @@
     view.backgroundColor = [kMainColor colorWithAlphaComponent:0.5];
     [self.contentView addSubview:view];
     
+    
+    UIImage *image = [UIImage imageNamed:@"user_avatar"];
+    _profileImageView = [[UIImageView alloc] initWithImage:image];
+    _profileImageView.frame = CGRectMake(0, 0, 60, 60);
+    _profileImageView.userInteractionEnabled = YES;
+    _profileImageView.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
+    [self.contentView addSubview:_profileImageView];
+    
+
     
 
 

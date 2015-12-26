@@ -11,6 +11,14 @@
 #import "MacroDefinition.h"
 #import "ZZProfileCell.h"
 #import "ZZListCell.h"
+#import "ZZConfiguration.h"
+#import "ZZLoginViewController.h"
+#import "ZZHttpClient.h"
+#import "ZZSettingViewController.h"
+
+
+
+
 
 @interface ZZMyHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -27,8 +35,11 @@
    
     [self configureTitles:@"我的主页"];
     [self.tableView reloadData];
-
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 }
 
 #pragma mark - UITableViewDataSource UITableViewDelegate
@@ -79,6 +90,38 @@
     return 20;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    // 点击最后一个cell不需要登录
+    // 其他cell先要判断是否登录，如果未登录弹出登录控制器
+    if (indexPath.section == 4 && indexPath.row == 0) {
+        ZZSettingViewController *settingViewController = [[ZZSettingViewController alloc] init];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:settingViewController];
+        [self presentViewController:navigationController animated:YES completion:nil];
+    }else {
+        if ([ZZConfiguration sharedConfigration].token.length == 0) {
+            ZZLoginViewController *loginViewController = [[ZZLoginViewController alloc] init];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+            [self presentViewController:navigationController animated:YES completion:nil];
+        }else{
+            //!! 晚些替换成宏
+            if (indexPath.section == 0 && indexPath.row == 0) {
+            
+            
+            } else if (indexPath.section == 1 && indexPath.row == 0) {
+                
+            
+            
+            }
+       
+        
+        
+        }
+    }
+    
+    
+
+}
 
 
 #pragma mark - private

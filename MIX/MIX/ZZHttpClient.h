@@ -16,8 +16,11 @@ typedef void (^FailBlock)(id data);
 
 
 
-#pragma mark  个人中心
-- (void)requestUserProfileWithSuccessBlock:(SuccessBlock *)success failBlock:(FailBlock)faile;
+#pragma mark - 个人中心
 
+#pragma mark - 个人中心数据
+- (void)requestUserProfileWithSuccessBlock:(SuccessBlock *)success failBlock:(FailBlock)fail;
+#pragma mark - 登录
+- (void)requestLoginWithWithSuccessBlock:(SuccessBlock *)success failBlock:(FailBlock)fail;
 
 @end
