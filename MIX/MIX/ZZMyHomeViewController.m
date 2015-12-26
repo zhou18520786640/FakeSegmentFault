@@ -9,11 +9,13 @@
 #import "ZZMyHomeViewController.h"
 #import "ZZRankView.h"
 #import "MacroDefinition.h"
+#import "ZZProfileCell.h"
+#import "ZZListCell.h"
 
 @interface ZZMyHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *settingItems;
-@property (nonatomic, strong) UIView *greenView;
+
 @property (nonatomic, strong) ZZRankView *rankView;
 @end
 
@@ -25,7 +27,7 @@
    
     [self configureTitles:@"我的主页"];
     [self.tableView reloadData];
-    [self configureTableViewHeader];
+
     
 }
 
@@ -48,45 +50,39 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    
-    UITableViewCell *cell = nil;
-
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0 && indexPath.row == 0) {
         static NSString *imageCellIdentifer = @"imageCellIdentifer";
-        cell = [tableView dequeueReusableCellWithIdentifier:imageCellIdentifer];
+       ZZProfileCell  *cell = [tableView dequeueReusableCellWithIdentifier:imageCellIdentifer];
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:imageCellIdentifer];
-            [self configureTopLineAtIndexPath:indexPath AtCell:cell];
-
-
+            cell = [[ZZProfileCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:imageCellIdentifer];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
+        return cell;
     }else {
         static NSString *listCellIdentifer = @"listCellIdentifer";
-        cell = [tableView dequeueReusableCellWithIdentifier:listCellIdentifer];
+        ZZListCell  *cell = [tableView dequeueReusableCellWithIdentifier:listCellIdentifer];
         if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:listCellIdentifer];
+            cell = [[ZZListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:listCellIdentifer];
             [self configureCell:cell indexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
         }
+        return cell;
+
     }
-    
-    
- 
-
-
-
-    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if (section == 0) {
+        return 40;
+    }
     return 20;
 }
 
-#pragma mark - private
-- (void)configureTableViewHeader {
-    self.tableView.tableHeaderView = self.greenView;
 
-}
+
+#pragma mark - private
+
 - (void)configureCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath {
     NSArray *item = self.settingItems[indexPath.section];
     NSString *text = item[indexPath.row];
@@ -112,15 +108,14 @@
     if (_settingItems == nil) {
          NSString *path = [[NSBundle mainBundle] pathForResource:@"setting" ofType:@"plist"];
         _settingItems = [[NSArray alloc] initWithContentsOfFile:path];
-        
-        
     }
     return _settingItems;
 }
 
 - (UITableView *)tableView{
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+        CGRect rect = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 100);
+        _tableView = [[UITableView alloc] initWithFrame:rect];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.backgroundColor = UIColorFromRGB(0xefeff4);
@@ -131,13 +126,6 @@
     return _tableView;
 }
 
-- (UIView *)greenView{
-    if (_greenView == nil) {
-        CGRect rect = CGRectMake(0, 0, self.view.bounds.size.width, 50);
-        _greenView = [[UIImageView alloc] initWithFrame:rect];
-        _greenView.backgroundColor = UIColorFromRGB(0x26a978);
-    }
-    return _greenView;
-}
+
 
 @end

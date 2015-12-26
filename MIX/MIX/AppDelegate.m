@@ -101,7 +101,11 @@
     
     UINavigationBar * appearance = [UINavigationBar appearance];
     [appearance setBarTintColor:kMainColor];
+    [appearance setTranslucent:NO];
     
+    // 去除导航栏上的分割线
+    [appearance setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+    appearance.shadowImage = [[UIImage alloc] init];
     
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 

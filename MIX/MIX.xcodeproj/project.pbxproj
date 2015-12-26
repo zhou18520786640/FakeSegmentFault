@@ -13,6 +13,8 @@
 		CB00A74E1C2B0FB20032DF24 /* ZZLoginInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A74D1C2B0FB20032DF24 /* ZZLoginInputView.m */; };
 		CB00A75D1C2C2CC20032DF24 /* setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB00A75C1C2C2CC20032DF24 /* setting.plist */; };
 		CB00A7601C2C318A0032DF24 /* ZZRankView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A75F1C2C318A0032DF24 /* ZZRankView.m */; };
+		CB00A7631C2D9CEF0032DF24 /* ZZProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A7621C2D9CEF0032DF24 /* ZZProfileCell.m */; };
+		CB00A7661C2DA4510032DF24 /* ZZListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A7651C2DA4510032DF24 /* ZZListCell.m */; };
 		CB06F0B61C263F3C003003EC /* questionDetail.css in Resources */ = {isa = PBXBuildFile; fileRef = CB06F0B51C263F3B003003EC /* questionDetail.css */; };
 		CB250D481C12D93100F37028 /* ZZAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D471C12D93100F37028 /* ZZAskViewController.m */; };
 		CB250D4C1C13CEE100F37028 /* ZZQuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D4B1C13CEE100F37028 /* ZZQuestionDetailViewController.m */; };
@@ -75,6 +77,10 @@
 		CB00A75C1C2C2CC20032DF24 /* setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setting.plist; sourceTree = "<group>"; };
 		CB00A75E1C2C318A0032DF24 /* ZZRankView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZRankView.h; sourceTree = "<group>"; };
 		CB00A75F1C2C318A0032DF24 /* ZZRankView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZRankView.m; sourceTree = "<group>"; };
+		CB00A7611C2D9CEF0032DF24 /* ZZProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZProfileCell.h; sourceTree = "<group>"; };
+		CB00A7621C2D9CEF0032DF24 /* ZZProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZProfileCell.m; sourceTree = "<group>"; };
+		CB00A7641C2DA4510032DF24 /* ZZListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZListCell.h; sourceTree = "<group>"; };
+		CB00A7651C2DA4510032DF24 /* ZZListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZListCell.m; sourceTree = "<group>"; };
 		CB06F0B51C263F3B003003EC /* questionDetail.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = questionDetail.css; sourceTree = "<group>"; };
 		CB250D461C12D93100F37028 /* ZZAskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAskViewController.h; sourceTree = "<group>"; };
 		CB250D471C12D93100F37028 /* ZZAskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAskViewController.m; sourceTree = "<group>"; };
@@ -379,6 +385,10 @@
 				CB32C0841C04C28F00B6CB02 /* ZZMyHomeViewController.m */,
 				CB00A75E1C2C318A0032DF24 /* ZZRankView.h */,
 				CB00A75F1C2C318A0032DF24 /* ZZRankView.m */,
+				CB00A7611C2D9CEF0032DF24 /* ZZProfileCell.h */,
+				CB00A7621C2D9CEF0032DF24 /* ZZProfileCell.m */,
+				CB00A7641C2DA4510032DF24 /* ZZListCell.h */,
+				CB00A7651C2DA4510032DF24 /* ZZListCell.m */,
 			);
 			name = "Me（我的）";
 			sourceTree = "<group>";
@@ -766,7 +776,9 @@
 				CB250D551C1463C600F37028 /* ZZAnswerDetailModel.m in Sources */,
 				CB00A7471C2B0A040032DF24 /* ZZLoginViewController.m in Sources */,
 				CB00A7601C2C318A0032DF24 /* ZZRankView.m in Sources */,
+				CB00A7661C2DA4510032DF24 /* ZZListCell.m in Sources */,
 				CB34D7671C06E42B0081C4FB /* ZZHttpClient.m in Sources */,
+				CB00A7631C2D9CEF0032DF24 /* ZZProfileCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
