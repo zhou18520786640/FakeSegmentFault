@@ -266,19 +266,11 @@
 			name = "Register(注册)";
 			sourceTree = "<group>";
 		};
-		CB00A7561C2B1C3F0032DF24 /* ThridParty */ = {
-			isa = PBXGroup;
-			children = (
-				CB00A7571C2B1C4B0032DF24 /* ShareSDK */,
-			);
-			name = ThridParty;
-			sourceTree = "<group>";
-		};
-		CB00A7571C2B1C4B0032DF24 /* ShareSDK */ = {
+		CB00A7671C2E24E60032DF24 /* Manager(处理多个控制器间都有的逻辑) */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = ShareSDK;
+			name = "Manager(处理多个控制器间都有的逻辑)";
 			sourceTree = "<group>";
 		};
 		CB250D451C12D89500F37028 /* Ask（提问） */ = {
@@ -418,10 +410,9 @@
 		CB32C0481C04BD9300B6CB02 /* MIX */ = {
 			isa = PBXGroup;
 			children = (
-				CB00A7561C2B1C3F0032DF24 /* ThridParty */,
-				CBD1BB4A1C12A1B000D977F1 /* Service */,
-				CB34D7811C0714810081C4FB /* Model */,
-				CB34D7641C06E3790081C4FB /* Network */,
+				CB00A7671C2E24E60032DF24 /* Manager(处理多个控制器间都有的逻辑) */,
+				CB34D7811C0714810081C4FB /* Model(瘦model) */,
+				CB34D7641C06E3790081C4FB /* Network(网络参数封装和请求发送，错误处理) */,
 				CB32C0761C04C22200B6CB02 /* ViewController */,
 				CB32C04C1C04BD9300B6CB02 /* AppDelegate.h */,
 				CB32C04D1C04BD9300B6CB02 /* AppDelegate.m */,
@@ -480,13 +471,13 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
-		CB34D7641C06E3790081C4FB /* Network */ = {
+		CB34D7641C06E3790081C4FB /* Network(网络参数封装和请求发送，错误处理) */ = {
 			isa = PBXGroup;
 			children = (
 				CB34D7651C06E42B0081C4FB /* ZZHttpClient.h */,
 				CB34D7661C06E42B0081C4FB /* ZZHttpClient.m */,
 			);
-			name = Network;
+			name = "Network(网络参数封装和请求发送，错误处理)";
 			sourceTree = "<group>";
 		};
 		CB34D76B1C06ED4A0081C4FB /* Hottest(热门的) */ = {
@@ -518,7 +509,7 @@
 			name = ZZNewestCell;
 			sourceTree = "<group>";
 		};
-		CB34D7811C0714810081C4FB /* Model */ = {
+		CB34D7811C0714810081C4FB /* Model(瘦model) */ = {
 			isa = PBXGroup;
 			children = (
 				CB00A7481C2B0A860032DF24 /* Register */,
@@ -526,7 +517,7 @@
 				CB250D4F1C13D16C00F37028 /* QuestionDetail */,
 				CB250D4E1C13D15C00F37028 /* Question */,
 			);
-			name = Model;
+			name = "Model(瘦model)";
 			sourceTree = "<group>";
 		};
 		CB987FD51C129E030013B3E0 /* Base 基类 */ = {
@@ -545,13 +536,6 @@
 				CBA142E61C27139B003D8186 /* ZZBrowerViewController.m */,
 			);
 			name = "Brower(浏览器)";
-			sourceTree = "<group>";
-		};
-		CBD1BB4A1C12A1B000D977F1 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Service;
 			sourceTree = "<group>";
 		};
 		CBD1BB541C12A61400D977F1 /* Base */ = {

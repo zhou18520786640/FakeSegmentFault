@@ -8,7 +8,16 @@
 
 #import <AFNetworking/AFNetworking.h>
 
+typedef void (^SuccessBlock)(id data);
+typedef void (^FailBlock)(id data);
+
 @interface ZZHttpClient : AFHTTPSessionManager
 + (ZZHttpClient *)sharedHTTPClient;
+
+
+
+#pragma mark  个人中心
+- (void)requestUserProfileWithSuccessBlock:(SuccessBlock *)success failBlock:(FailBlock)faile;
+
 
 @end

@@ -7,6 +7,10 @@
 //
 
 #import "ZZHttpClient.h"
+#import "MBProgressHUD.h"
+
+// 使用一个静态类来封装
+static MBProgressHUD *loadingHud = nil;
 
 static NSString * const kBaseURL = @"http://api.segmentfault.com";
 
@@ -38,6 +42,38 @@ static NSString * const kBaseURL = @"http://api.segmentfault.com";
     
     return self;
 }
+
+- (void)requestUserProfileWithSuccessBlock:(SuccessBlock *)success failBlock:(FailBlock)fail{
+    NSMutableDictionary  *parameters = [NSMutableDictionary dictionary];
+    parameters[@"token"] = @"2b3aa3e88894040e148a7ad740185173";
+    
+    [self GET:@"/user/me" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+//        success(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        fail(error);
+    }];
+
+}
+
+
+- (void)showLoading {
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    if (!loadingHud) {
+        loadingHud = [[MBProgressHUD alloc] initWithView:window];
+        loadingHud.mode = MBProgressHUDModeIndeterminate;
+    }
+    
+    loadingHud.removeFromSuperViewOnHide = YES;
+    [window addSubview:loadingHud];
+    [loadingHud show:YES];
+}
+
+- (void)hideLoading {
+    [loadingHud hide:YES];
+    loadingHud = nil;
+}
+
+
 
 
 @end
