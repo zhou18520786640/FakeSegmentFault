@@ -41,17 +41,22 @@
 
 - (void)configureSubViews{
  
-    
+    // scrollView
     self.backgroundScrollView.contentSize = self.view.bounds.size;
     [self.backgroundScrollView addSubview:self.loginInputView];
     
+    // 登录按钮
     self.loginButton.frame = CGRectMake(0, CGRectGetMaxY(_loginInputView.frame) + 16, 346, 45);
     self.loginButton.center = CGPointMake(self.view.bounds.size.width * 0.5, _loginButton.center.y);
-    
     [self.backgroundScrollView addSubview:self.loginButton];
     
+    // 提示文案
     self.loginTipLabel.frame = CGRectMake(0, 122, self.view.bounds.size.width, 15);
     [self.backgroundScrollView addSubview:self.loginTipLabel];
+    
+    // 注册按钮
+    self.registerButton.frame = CGRectMake(74, CGRectGetMaxY(self.loginButton.frame) + 50, 60, 15);
+    [self.backgroundScrollView addSubview:self.registerButton];
     
     
 }
@@ -87,7 +92,13 @@
 
 }
 
-#pragma mark - 
+- (void)registerButtonDidPressed:(UIButton *)button {
+    
+
+}
+
+#pragma mark - setter and getter
+
 - (UIScrollView *)backgroundScrollView{
     if (_backgroundScrollView == nil) {
         _backgroundScrollView = [[UIScrollView alloc] initWithFrame:self.view.
@@ -125,9 +136,23 @@
         _loginTipLabel.font = [UIFont systemFontOfSize:15];
         _loginTipLabel.textAlignment = NSTextAlignmentCenter;
         _loginTipLabel.textColor = UIColorFromRGB(0x757575);
+        
     }
     return _loginTipLabel;
 }
 
+- (UIButton *)registerButton{
+    if (_registerButton == nil) {
+        _registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_registerButton setTitle:@"注册账号" forState:UIControlStateNormal];
+        _registerButton.titleLabel.font = [UIFont systemFontOfSize:15];
+        _registerButton.titleLabel.textAlignment = NSTextAlignmentLeft;
+        [_registerButton addTarget:self action:@selector(registerButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [_registerButton setTitleColor:UIColorFromRGB(0xa4a4a4) forState:UIControlStateNormal];
+        
+    }
+    return _registerButton;
+
+}
 
 @end
