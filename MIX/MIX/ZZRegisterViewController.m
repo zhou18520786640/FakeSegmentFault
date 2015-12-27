@@ -27,19 +27,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self configureTitles:@"注册账号"];
     [self configureCancelBarItem];
     
 }
 
-
-#pragma mark - private method
-- (void)configureCancelBarItem {
-//    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    
+#pragma mark - Target Action 
+- (void)leftButtonDidPressed {
+    [self dismissViewControllerAnimated:YES completion:nil];
 
 
 }
+
+#pragma mark - private method
+- (void)configureCancelBarItem {
+    UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    leftButton.frame = CGRectMake(0, 0, 44, 44);
+    [leftButton setTitle:@"取消" forState:UIControlStateNormal];
+    leftButton.titleLabel.font = [UIFont systemFontOfSize:18];
+    [leftButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(leftButtonDidPressed) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+}
+
+
+
+#pragma mark - getter 
+- (UIScrollView *)backgroundScrollView{
+    if (_backgroundScrollView == nil) {
+        _backgroundScrollView = [[UIScrollView alloc] initWithFrame:self.view.
+                                 bounds];
+        
+        [self.view addSubview:_backgroundScrollView];
+    }
+    return _backgroundScrollView;
+}
+
 
 
 
