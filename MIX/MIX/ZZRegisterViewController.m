@@ -9,32 +9,45 @@
 #import "ZZRegisterViewController.h"
 
 @interface ZZRegisterViewController ()
+// 可滚动的背景
+@property (nonatomic, strong) UIScrollView *backgroundScrollView;
+
+// 输入的内容
 @property (nonatomic, strong) UITextField *userTextField;
 @property (nonatomic, strong) UITextField *EmailTextField;
 @property (nonatomic, strong) UITextField *passwordTextField;
-@property (nonatomic, strong) UIScrollView *backgroundScrollView;
+
+// 注册按钮
+@property (nonatomic, strong) UIButton *registerButton;
+
+
 @end
 
 @implementation ZZRegisterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configureTitles:@"注册账号"];
+    [self configureCancelBarItem];
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - private method
+- (void)configureCancelBarItem {
+//    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+
+
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
+
+
+
+
+
+
 
 @end

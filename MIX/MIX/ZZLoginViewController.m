@@ -11,6 +11,7 @@
 #import "MacroDefinition.h"
 #import "ZZHttpClient.h"
 #import "EXTScope.h"
+#import "ZZRegisterViewController.h"
 
 @interface ZZLoginViewController ()
 
@@ -93,7 +94,9 @@
 }
 
 - (void)registerButtonDidPressed:(UIButton *)button {
-    
+    ZZRegisterViewController *registerViewController = [[ZZRegisterViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:registerViewController];
+    [self presentViewController:navigationController animated:YES completion:nil];
 
 }
 
