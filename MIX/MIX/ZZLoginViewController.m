@@ -49,6 +49,8 @@
     self.loginButton.center = CGPointMake(self.view.bounds.size.width * 0.5, _loginButton.center.y);
     
     [self.backgroundScrollView addSubview:self.loginButton];
+    
+    self.loginTipLabel.frame = CGRectMake(0, 122, self.view.bounds.size.width, 15);
     [self.backgroundScrollView addSubview:self.loginTipLabel];
     
     
@@ -114,6 +116,17 @@
     }
     return _loginButton;
 
+}
+
+- (UILabel *)loginTipLabel {
+    if (_loginTipLabel == nil) {
+        _loginTipLabel = [[UILabel alloc] init];
+        _loginTipLabel.text = @"或者本站账号登录";
+        _loginTipLabel.font = [UIFont systemFontOfSize:15];
+        _loginTipLabel.textAlignment = NSTextAlignmentCenter;
+        _loginTipLabel.textColor = UIColorFromRGB(0x757575);
+    }
+    return _loginTipLabel;
 }
 
 
