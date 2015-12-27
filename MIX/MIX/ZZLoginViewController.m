@@ -9,6 +9,8 @@
 #import "ZZLoginViewController.h"
 #import "ZZLoginInputView.h"
 #import "MacroDefinition.h"
+#import "ZZHttpClient.h"
+#import "EXTScope.h"
 
 @interface ZZLoginViewController ()
 
@@ -25,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = UIColorFromRGB(0xefeff4);
     [self configureTitles:@"登录"];
     [self configureSubViews];
@@ -37,9 +40,18 @@
 }
 
 - (void)configureSubViews{
+ 
+    
     self.backgroundScrollView.contentSize = self.view.bounds.size;
     [self.backgroundScrollView addSubview:self.loginInputView];
+    
+    self.loginButton.frame = CGRectMake(0, CGRectGetMaxY(_loginInputView.frame) + 16, 346, 45);
+    self.loginButton.center = CGPointMake(self.view.bounds.size.width * 0.5, _loginButton.center.y);
+    
+    [self.backgroundScrollView addSubview:self.loginButton];
     [self.backgroundScrollView addSubview:self.loginTipLabel];
+    
+    
 }
 
 - (void)configureLeftBarItem {
@@ -57,6 +69,22 @@
 
 }
 
+#pragma mark - target action
+- (void)loginButtonDidPressed:(UIButton *)button {
+    [self showLoading];
+    @weakify(self);
+    [[ZZHttpClient sharedHTTPClient] requestLoginWithName:_loginInputView.emailText password:_loginInputView.passwordText SuccessBlock:^(id data) {
+        @strongify(self);
+        [self hideLoading];
+
+        
+    } failBlock:^(id error) {
+        @strongify(self);
+        [self hideLoading];
+    }];
+
+}
+
 #pragma mark - 
 - (UIScrollView *)backgroundScrollView{
     if (_backgroundScrollView == nil) {
@@ -69,6 +97,24 @@
 }
 
 
+- (ZZLoginInputView *)loginInputView {
+    if (_loginInputView == nil) {
+        _loginInputView = [[ZZLoginInputView alloc] initWithFrame:CGRectMake(0, 169, [UIScreen mainScreen].bounds.size.width, 100)];
+    }
+    return  _loginInputView;
+}
+
+- (UIButton *)loginButton {
+    if (_loginButton == nil) {
+        _loginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_loginButton setTitle:@"登录" forState:UIControlStateNormal];
+        [_loginButton addTarget:self action:@selector(loginButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+        _loginButton.layer.cornerRadius = 4;
+        _loginButton.backgroundColor = kMainColor;
+    }
+    return _loginButton;
+
+}
 
 
 @end

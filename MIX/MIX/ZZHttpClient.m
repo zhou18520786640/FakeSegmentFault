@@ -36,7 +36,6 @@ static NSString * const kBaseURL = @"http://api.segmentfault.com";
     if (self) {
         self.responseSerializer = [AFJSONResponseSerializer serializer];
         [self.requestSerializer setTimeoutInterval:15];
-
         self.requestSerializer = [AFJSONRequestSerializer serializer];
     }
     
@@ -44,7 +43,7 @@ static NSString * const kBaseURL = @"http://api.segmentfault.com";
 }
 
 #pragma mark - profile
-- (void)requestUserProfileWithSuccessBlock:(SuccessBlock *)success failBlock:(FailBlock)fail{
+- (void)requestUserProfileWithSuccessBlock:(SuccessBlock )success failBlock:(FailBlock)fail{
     NSMutableDictionary  *parameters = [NSMutableDictionary dictionary];
     parameters[@"token"] = @"2b3aa3e88894040e148a7ad740185173";
     
@@ -56,12 +55,22 @@ static NSString * const kBaseURL = @"http://api.segmentfault.com";
 
 }
 
-- (void)requestLoginWithWithSuccessBlock:(SuccessBlock *)success failBlock:(FailBlock)fail{
-//    NSMutableDictionary *
+- (void)requestLoginWithName:(NSString *)name password:(NSString *)password SuccessBlock:(SuccessBlock)success failBlock:(FailBlock)fail {
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"mail"] = name;
+    parameters[@"password"] = password;
+
+    
+    
+    [self POST:@"/user/login" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        success(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        fail(error);
+    }];
+
+
 
 }
-
-
 
 
 
