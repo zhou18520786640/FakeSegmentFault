@@ -33,17 +33,27 @@
 
 
 - (void)configureSubviews{
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, self.bounds.size.width - 65, self.bounds.size.width, 65)];
+    CGFloat  kWidth = [UIScreen mainScreen].bounds.size.width;
+
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 35, self.bounds.size.width, 216)];
     view.backgroundColor = [kMainColor colorWithAlphaComponent:0.5];
     [self.contentView addSubview:view];
     
     
     UIImage *image = [UIImage imageNamed:@"user_avatar"];
     _profileImageView = [[UIImageView alloc] initWithImage:image];
-    _profileImageView.frame = CGRectMake(0, 0, 60, 60);
+    _profileImageView.frame = CGRectMake(0,30, 60, 60);
     _profileImageView.userInteractionEnabled = YES;
-    _profileImageView.center = CGPointMake(self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
+    _profileImageView.center = CGPointMake(kWidth * 0.5, _profileImageView.center.y);
     [self.contentView addSubview:_profileImageView];
+    
+    CGRect rect = CGRectMake(0, CGRectGetMaxY(_profileImageView.frame) + 20, kWidth, 17);
+    _userNameAndLoginTipLabel = [[UILabel alloc] initWithFrame:rect];
+    _userNameAndLoginTipLabel.text = @"登录/注册";
+    _userNameAndLoginTipLabel.textColor = [UIColor whiteColor];
+    _userNameAndLoginTipLabel.font = [UIFont systemFontOfSize:17];
+    _userNameAndLoginTipLabel.textAlignment = NSTextAlignmentCenter;
+    [self.contentView addSubview:_userNameAndLoginTipLabel];
     
 
     
