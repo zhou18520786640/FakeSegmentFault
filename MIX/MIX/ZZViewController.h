@@ -31,7 +31,11 @@
  *  @param titles 标题
  */
 - (void)configureTitles:(NSString *)titles;
-
-
+/**
+ *  返回按钮被按下时回调
+ *
+ *  @param button 返回按钮
+ */
+- (void)configureLeftBackButton;
 
 @end

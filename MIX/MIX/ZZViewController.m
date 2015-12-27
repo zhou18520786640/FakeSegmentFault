@@ -66,5 +66,19 @@ static MBProgressHUD *loadingHud = nil;
     self.navigationItem.titleView = titleLabel;
 }
 
+- (void)configureLeftBackButton{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 20, 20);
+    UIImage *image = [UIImage imageNamed:@"icon_btn_back"];
+    [button setImage:image forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(backButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+}
+
+- (void)backButtonDidPressed:(UIButton *)button {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
+}
+
 
 @end

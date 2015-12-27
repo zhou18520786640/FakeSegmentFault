@@ -45,6 +45,8 @@
 		CB34D7801C070BE20081C4FB /* ZZNewestVoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34D77F1C070BE20081C4FB /* ZZNewestVoteView.m */; };
 		CB987FD81C129E350013B3E0 /* ZZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB987FD71C129E350013B3E0 /* ZZViewController.m */; };
 		CBA142E71C27139B003D8186 /* ZZBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA142E61C27139B003D8186 /* ZZBrowerViewController.m */; };
+		CBB666651C2EE8BB00D0419D /* global.css in Resources */ = {isa = PBXBuildFile; fileRef = CBB666641C2EE8BB00D0419D /* global.css */; };
+		CBB666671C2EE99F00D0419D /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = CBB666661C2EE99F00D0419D /* highlight.min.js */; };
 		CBD1BB531C12A5AF00D977F1 /* ZZNewestListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1BB521C12A5AF00D977F1 /* ZZNewestListModel.m */; };
 		CBD1BB571C12A62E00D977F1 /* ZZBaseResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1BB561C12A62E00D977F1 /* ZZBaseResponseModel.m */; };
 		CBD1BB5A1C12B2A100D977F1 /* ZZNewestListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1BB591C12B2A100D977F1 /* ZZNewestListItem.m */; };
@@ -144,6 +146,8 @@
 		CB987FD71C129E350013B3E0 /* ZZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZViewController.m; sourceTree = "<group>"; };
 		CBA142E51C27139B003D8186 /* ZZBrowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBrowerViewController.h; sourceTree = "<group>"; };
 		CBA142E61C27139B003D8186 /* ZZBrowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBrowerViewController.m; sourceTree = "<group>"; };
+		CBB666641C2EE8BB00D0419D /* global.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = global.css; sourceTree = "<group>"; };
+		CBB666661C2EE99F00D0419D /* highlight.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.min.js; sourceTree = "<group>"; };
 		CBD1BB511C12A5AF00D977F1 /* ZZNewestListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewestListModel.h; sourceTree = "<group>"; };
 		CBD1BB521C12A5AF00D977F1 /* ZZNewestListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZNewestListModel.m; sourceTree = "<group>"; };
 		CBD1BB551C12A62E00D977F1 /* ZZBaseResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBaseResponseModel.h; sourceTree = "<group>"; };
@@ -465,6 +469,8 @@
 		CB32C0491C04BD9300B6CB02 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CBB666661C2EE99F00D0419D /* highlight.min.js */,
+				CBB666641C2EE8BB00D0419D /* global.css */,
 				CB34D75F1C06CEAE0081C4FB /* tabbar_selected_background.png */,
 				CB34D7601C06CEAE0081C4FB /* tabbar_selected_background@2x.png */,
 				CB32C04F1C04BD9300B6CB02 /* Assets.xcassets */,
@@ -698,7 +704,9 @@
 				CB32C0501C04BD9300B6CB02 /* Assets.xcassets in Resources */,
 				CB32C0531C04BD9300B6CB02 /* LaunchScreen.storyboard in Resources */,
 				CB06F0B61C263F3C003003EC /* questionDetail.css in Resources */,
+				CBB666651C2EE8BB00D0419D /* global.css in Resources */,
 				CB00A75D1C2C2CC20032DF24 /* setting.plist in Resources */,
+				CBB666671C2EE99F00D0419D /* highlight.min.js in Resources */,
 				CB34D7611C06CEAE0081C4FB /* tabbar_selected_background.png in Resources */,
 				CB34D7621C06CEAE0081C4FB /* tabbar_selected_background@2x.png in Resources */,
 			);

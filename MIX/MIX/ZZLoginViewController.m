@@ -8,6 +8,7 @@
 
 #import "ZZLoginViewController.h"
 #import "ZZLoginInputView.h"
+#import "MacroDefinition.h"
 
 @interface ZZLoginViewController ()
 
@@ -24,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = UIColorFromRGB(0xefeff4);
     [self configureTitles:@"登录"];
     [self configureSubViews];
     [self configureLeftBarItem];

@@ -37,6 +37,7 @@
     
     [self.rdv_tabBarController setTabBarHidden:YES animated:YES];
     [self configureTitles:@"问题详情"];
+    [self configureLeftBackButton];
     [self configureWebView];
     [self requestQuestionDetailWithQuestionId:self.questionId];
 
@@ -106,7 +107,7 @@
 - (void)refreshContentWebView:(ZZQuestionDetailDataModel *)questionDetailModelData{
     
     
-    NSString *parseTitle = [NSString stringWithFormat:@"<h3>%@</h3>",questionDetailModelData.title];
+    NSString *parseTitle = [NSString stringWithFormat:@"%@",questionDetailModelData.title];
     NSString *parseNameAndRank = [NSString stringWithFormat:@"<h4 id = \"time\"><span>%@ %@</span> · %@</h4>",questionDetailModelData.user.name,questionDetailModelData.user.rank,questionDetailModelData.createdDate];
     NSString *HTMLString = [NSString stringWithFormat:@"%@%@%@",parseTitle,parseNameAndRank,questionDetailModelData.parsedText];
     
@@ -137,7 +138,7 @@
     self.parsedText = questionDetailModelData.parsedText;
     
     // 链接mainBundle中的CSS文件
-    NSURL *cssURL = [[NSBundle mainBundle] URLForResource:@"questionDetail" withExtension:@"css"];
+    NSURL *cssURL = [[NSBundle mainBundle] URLForResource:@"global" withExtension:@"css"];
     HTMLString = [NSString stringWithFormat:@"<link rel=\"stylesheet\" href=\"%@\">%@",cssURL,HTMLString];
     [self.contentWebView loadHTMLString:HTMLString baseURL:nil];
 }
