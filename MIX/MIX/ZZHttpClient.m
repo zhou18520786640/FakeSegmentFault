@@ -36,7 +36,7 @@ static NSString * const kBaseURL = @"http://api.segmentfault.com";
     if (self) {
         self.responseSerializer = [AFJSONResponseSerializer serializer];
         [self.requestSerializer setTimeoutInterval:15];
-        self.requestSerializer = [AFJSONRequestSerializer serializer];
+        self.requestSerializer = [AFHTTPRequestSerializer serializer];
     }
     
     return self;
