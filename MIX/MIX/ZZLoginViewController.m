@@ -16,6 +16,8 @@
 
 @interface ZZLoginViewController ()
 
+@property (nonatomic, copy) FinishLoginBlock finishLoginBlock;
+
 @property (nonatomic, strong) UIScrollView *backgroundScrollView;
 @property (nonatomic, strong) UILabel *loginTipLabel;
 @property (nonatomic, strong) ZZLoginInputView *loginInputView;
@@ -26,6 +28,16 @@
 @end
 
 @implementation ZZLoginViewController
+
+- (instancetype)initWithFinishLogin:(FinishLoginBlock)finishLoginBlock {
+    self = [super init];
+    if (self) {
+        self.finishLoginBlock = finishLoginBlock;
+    }
+    
+    return self;
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -87,9 +99,10 @@
         [self hideLoading];
         ZZLoginModel *loginModel = [[ZZLoginModel alloc] initWithDictionary:data error:nil];
         if (loginModel.status == 0) {
-            [self showText:@"登录成功"];
             [self dismissViewControllerAnimated:YES completion:nil];
-            
+            if (self.finishLoginBlock) {
+                self.finishLoginBlock();
+            }
         }else {
             NSString *errorMessage = loginModel.mobile.error;
             [self showText:errorMessage];

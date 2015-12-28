@@ -100,7 +100,9 @@
         [self presentViewController:navigationController animated:YES completion:nil];
     }else {
         if ([ZZConfiguration sharedConfigration].token.length == 0) {
-            ZZLoginViewController *loginViewController = [[ZZLoginViewController alloc] init];
+            ZZLoginViewController *loginViewController = [[ZZLoginViewController alloc] initWithFinishLogin:^{
+                // 发送获取用户信息的请求
+            }];
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
             [self presentViewController:navigationController animated:YES completion:nil];
         }else{

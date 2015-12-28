@@ -7,7 +7,7 @@
 //
 
 #import "ZZViewController.h"
-
+typedef void (^FinishLoginBlock)();
 @interface ZZLoginViewController : ZZViewController
-
+- (instancetype)initWithFinishLogin:(FinishLoginBlock)finishLoginBlock;
 @end
