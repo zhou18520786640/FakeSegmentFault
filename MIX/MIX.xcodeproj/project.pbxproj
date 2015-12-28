@@ -45,6 +45,7 @@
 		CB34D7801C070BE20081C4FB /* ZZNewestVoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB34D77F1C070BE20081C4FB /* ZZNewestVoteView.m */; };
 		CB987FD81C129E350013B3E0 /* ZZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB987FD71C129E350013B3E0 /* ZZViewController.m */; };
 		CBA142E71C27139B003D8186 /* ZZBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA142E61C27139B003D8186 /* ZZBrowerViewController.m */; };
+		CBB46D1B1C318BF900D291ED /* ZZLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB46D1A1C318BF900D291ED /* ZZLoginModel.m */; };
 		CBB666651C2EE8BB00D0419D /* global.css in Resources */ = {isa = PBXBuildFile; fileRef = CBB666641C2EE8BB00D0419D /* global.css */; };
 		CBB666671C2EE99F00D0419D /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = CBB666661C2EE99F00D0419D /* highlight.min.js */; };
 		CBD1BB531C12A5AF00D977F1 /* ZZNewestListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1BB521C12A5AF00D977F1 /* ZZNewestListModel.m */; };
@@ -146,6 +147,8 @@
 		CB987FD71C129E350013B3E0 /* ZZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZViewController.m; sourceTree = "<group>"; };
 		CBA142E51C27139B003D8186 /* ZZBrowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBrowerViewController.h; sourceTree = "<group>"; };
 		CBA142E61C27139B003D8186 /* ZZBrowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBrowerViewController.m; sourceTree = "<group>"; };
+		CBB46D191C318BF900D291ED /* ZZLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZLoginModel.h; sourceTree = "<group>"; };
+		CBB46D1A1C318BF900D291ED /* ZZLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZLoginModel.m; sourceTree = "<group>"; };
 		CBB666641C2EE8BB00D0419D /* global.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = global.css; sourceTree = "<group>"; };
 		CBB666661C2EE99F00D0419D /* highlight.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.min.js; sourceTree = "<group>"; };
 		CBD1BB511C12A5AF00D977F1 /* ZZNewestListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZNewestListModel.h; sourceTree = "<group>"; };
@@ -312,6 +315,7 @@
 		CB00A77A1C2E68EE0032DF24 /* 我的模块 */ = {
 			isa = PBXGroup;
 			children = (
+				CBB46D181C318B9D00D291ED /* Login */,
 				CB00A7481C2B0A860032DF24 /* Register */,
 			);
 			name = "我的模块";
@@ -583,6 +587,15 @@
 			name = "Brower(浏览器)";
 			sourceTree = "<group>";
 		};
+		CBB46D181C318B9D00D291ED /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CBB46D191C318BF900D291ED /* ZZLoginModel.h */,
+				CBB46D1A1C318BF900D291ED /* ZZLoginModel.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		CBD1BB541C12A61400D977F1 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -795,6 +808,7 @@
 				CB32C04E1C04BD9300B6CB02 /* AppDelegate.m in Sources */,
 				CBD1BB571C12A62E00D977F1 /* ZZBaseResponseModel.m in Sources */,
 				CB00A7781C2E65770032DF24 /* ZZRegisterViewController.m in Sources */,
+				CBB46D1B1C318BF900D291ED /* ZZLoginModel.m in Sources */,
 				CBD1BB531C12A5AF00D977F1 /* ZZNewestListModel.m in Sources */,
 				CB32C04B1C04BD9300B6CB02 /* main.m in Sources */,
 				CB32C07F1C04C27600B6CB02 /* ZZFindViewController.m in Sources */,

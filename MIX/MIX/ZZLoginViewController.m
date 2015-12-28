@@ -12,6 +12,7 @@
 #import "ZZHttpClient.h"
 #import "EXTScope.h"
 #import "ZZRegisterViewController.h"
+#import "ZZLoginModel.h"
 
 @interface ZZLoginViewController ()
 
@@ -84,11 +85,20 @@
     [[ZZHttpClient sharedHTTPClient] requestLoginWithName:_loginInputView.emailText password:_loginInputView.passwordText SuccessBlock:^(id data) {
         @strongify(self);
         [self hideLoading];
-
+        ZZLoginModel *loginModel = [[ZZLoginModel alloc] initWithDictionary:data error:nil];
+        if (loginModel.status == 0) {
+            [self showText:@"登录成功"];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+        }else {
+            NSString *errorMessage = loginModel.mobile.error;
+            [self showText:errorMessage];
         
+        }
     } failBlock:^(id error) {
         @strongify(self);
         [self hideLoading];
+        [self showText:@"服务器或网络异常,请重试"];
     }];
 
 }

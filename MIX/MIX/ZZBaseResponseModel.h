@@ -16,5 +16,5 @@
 /**
  *  消息
  */
-@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString<Optional> *message;
 @end
