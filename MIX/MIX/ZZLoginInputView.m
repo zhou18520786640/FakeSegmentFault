@@ -90,6 +90,7 @@
         _passwordTextField = [[UITextField alloc] init];
         _passwordTextField.placeholder = @"密码";
         _passwordTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        _passwordTextField.secureTextEntry = YES;
         _passwordTextField.delegate = self;
         _passwordTextField.returnKeyType = UIReturnKeyDone;
 
