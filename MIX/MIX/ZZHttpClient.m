@@ -8,6 +8,7 @@
 
 #import "ZZHttpClient.h"
 #import "MBProgressHUD.h"
+#import "ZZConfiguration.h"
 
 // 使用一个静态类来封装
 static MBProgressHUD *loadingHud = nil;
@@ -42,18 +43,6 @@ static NSString * const kBaseURL = @"http://api.segmentfault.com";
     return self;
 }
 
-#pragma mark - profile
-- (void)requestUserProfileWithSuccessBlock:(SuccessBlock )success failBlock:(FailBlock)fail{
-    NSMutableDictionary  *parameters = [NSMutableDictionary dictionary];
-    parameters[@"token"] = @"2b3aa3e88894040e148a7ad740185173";
-    
-    [self GET:@"/user/me" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
-//        success(responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        fail(error);
-    }];
-
-}
 
 - (void)requestLoginWithName:(NSString *)name password:(NSString *)password SuccessBlock:(SuccessBlock)success failBlock:(FailBlock)fail {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
@@ -67,6 +56,20 @@ static NSString * const kBaseURL = @"http://api.segmentfault.com";
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         fail(error);
     }];
+
+}
+
+- (void)requestUserProfileWithSuccessBlock:(SuccessBlock)succces failBlock:(FailBlock)fail {
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"token"] = [ZZConfiguration sharedConfigration].token;
+    
+    NSString *service = [NSString stringWithFormat:@"/user/%@",[ZZConfiguration sharedConfigration].userID];
+    [self GET:service parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+        succces(responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        fail(error);
+    }];
+    
 
 
 

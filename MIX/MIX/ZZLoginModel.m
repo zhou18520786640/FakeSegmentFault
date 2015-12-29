@@ -15,3 +15,14 @@
 @implementation ZZLoginMobileModel
 
 @end
+
+
+@implementation ZZLoginUserModel
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{
+                                                       @"id": @"userID",
+                                                       }];
+}
+@end
+

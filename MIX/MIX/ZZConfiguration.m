@@ -23,4 +23,21 @@
     
     return _sharedClient;
 }
+
+- (void)setUserID:(NSString *)userID {
+    [[NSUserDefaults standardUserDefaults] setObject:userID forKey:@"kUseId"];
+}
+
+- (NSString *)userID {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"kUseId"];
+}
+
+
+- (void)setToken:(NSString *)token {
+    [[NSUserDefaults standardUserDefaults] setObject:token forKey:@"kToken"];
+}
+
+- (NSString *)token {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:@"kToken"];
+}
 @end

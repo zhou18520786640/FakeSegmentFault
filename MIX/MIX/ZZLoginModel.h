@@ -10,8 +10,11 @@
 
 
 @class ZZLoginMobileModel;
+@class ZZLoginUserModel;
 @interface ZZLoginModel : ZZBaseResponseModel
 @property (nonatomic, strong) ZZLoginMobileModel<Optional> *mobile;
+@property (nonatomic, strong) ZZLoginUserModel<Optional> *user;
+@property (nonatomic, copy) NSString<Optional> *token;
 @end
 
 
@@ -19,5 +22,15 @@
 @property (nonatomic, copy) NSString<Optional> *error_code;
 @property (nonatomic, copy) NSString<Optional> *error;
 @property (nonatomic, copy) NSString<Optional> *request;
+@end
+
+@interface ZZLoginUserModel : JSONModel
+@property (nonatomic, copy) NSString<Optional> *name;
+@property (nonatomic, copy) NSString<Optional> *mail;
+@property (nonatomic, copy) NSString<Optional> *slug;
+@property (nonatomic, copy) NSString<Optional> *userID;
+@property (nonatomic, copy) NSString<Optional> *url;
+@property (nonatomic, copy) NSString<Optional> *rank;
+@property (nonatomic, copy) NSString<Optional> *avatarUrl;
 
 @end

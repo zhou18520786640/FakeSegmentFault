@@ -10,6 +10,7 @@
 
 @interface ZZConfiguration : NSObject
 
+@property (nonatomic, copy) NSString *userID;
 @property (nonatomic, copy) NSString *token;
 
 + (instancetype)sharedConfigration;

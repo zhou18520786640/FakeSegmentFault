@@ -15,6 +15,8 @@
 #import "ZZLoginViewController.h"
 #import "ZZHttpClient.h"
 #import "ZZSettingViewController.h"
+#import "EXTScope.h"
+#import "ZZHttpClient.h"
 
 
 
@@ -100,9 +102,26 @@
         [self presentViewController:navigationController animated:YES completion:nil];
     }else {
         if ([ZZConfiguration sharedConfigration].token.length == 0) {
+            @weakify(self);
             ZZLoginViewController *loginViewController = [[ZZLoginViewController alloc] initWithFinishLogin:^{
-                // 发送获取用户信息的请求
+                @strongify(self);
+                @weakify(self);
+                [[ZZHttpClient sharedHTTPClient] requestUserProfileWithSuccessBlock:^(id data) {
+                    @strongify(self);
+                    NSLog(@"success");
+                } failBlock:^(id data) {
+                    @strongify(self);
+                    NSLog(@"fail");
+                }];
+                
+                
+                
+                
             }];
+            
+            
+            
+            
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
             [self presentViewController:navigationController animated:YES completion:nil];
         }else{

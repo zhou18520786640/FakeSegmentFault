@@ -13,6 +13,7 @@
 #import "EXTScope.h"
 #import "ZZRegisterViewController.h"
 #import "ZZLoginModel.h"
+#import "ZZConfiguration.h"
 
 @interface ZZLoginViewController ()
 
@@ -99,6 +100,8 @@
         [self hideLoading];
         ZZLoginModel *loginModel = [[ZZLoginModel alloc] initWithDictionary:data error:nil];
         if (loginModel.status == 0) {
+            [ZZConfiguration sharedConfigration].token = loginModel.token;
+            [ZZConfiguration sharedConfigration].userID = loginModel.user.userID;
             [self dismissViewControllerAnimated:YES completion:nil];
             if (self.finishLoginBlock) {
                 self.finishLoginBlock();
