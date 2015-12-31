@@ -105,7 +105,6 @@
             @weakify(self);
             ZZLoginViewController *loginViewController = [[ZZLoginViewController alloc] initWithFinishLogin:^{
                 @strongify(self);
-                @weakify(self);
                 [[ZZHttpClient sharedHTTPClient] requestUserProfileWithSuccessBlock:^(id data) {
                     @strongify(self);
                     NSLog(@"success");
