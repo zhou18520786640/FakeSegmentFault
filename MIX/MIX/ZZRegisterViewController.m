@@ -19,14 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-//    self.registerView = [[ZZRegisterView alloc] initWithFrame:self.view.bounds withRegisterViewClickBlock:^(NSString *name, NSString *email, NSString *password) {
-//        [ZZHttpClient sharedHTTPClient] requestRegister:name email:email password:password
-//    }];
     
-    self.registerView = [[ZZRegisterView alloc] initWithFrame:self.view.bounds withRegisterViewClickBlock:^(NSString *name, NSString *email, NSString *password) {
-        
-    }];
-
+    self.registerView = [[ZZRegisterView alloc] initWithFrame:self.view.bounds withRegisterViewClickBlock:nil];
     self.view = self.registerView;
     [self configureTitles:@"注册账号"];
     [self configureCancelBarItem];

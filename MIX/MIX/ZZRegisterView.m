@@ -8,7 +8,7 @@
 
 #import "ZZRegisterView.h"
 #import "MacroDefinition.h"
-@interface ZZRegisterView ()
+@interface ZZRegisterView () <UITextFieldDelegate>
 //用户名
 @property (nonatomic, strong) UITextField *userTextField;
 // 密码
@@ -39,48 +39,66 @@
     [self addSubview:self.backgroundScrollView];
     
     // 用户名
-    UILabel *userTextFieldBackgroundLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 35, self.bounds.size.width, 45)];
-    userTextFieldBackgroundLabel.backgroundColor = [UIColor whiteColor];
-    [self.backgroundScrollView addSubview:userTextFieldBackgroundLabel];
+    UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 34, self.bounds.size.width, 1)];
+    lineView.backgroundColor = UIColorFromRGB(0xc8c7cc);
+    [self.backgroundScrollView addSubview:lineView];
+    UIView *userTextFieldBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 35, self.bounds.size.width, 45)];
+    userTextFieldBackgroundView.backgroundColor = [UIColor whiteColor];
+    [self.backgroundScrollView addSubview:userTextFieldBackgroundView];
     
     self.userTextField = [[UITextField alloc] initWithFrame:CGRectMake(24, 0, self.bounds.size.width - 24 , 45)];
-    self.userTextField.backgroundColor = [UIColor blackColor];
+    self.userTextField.backgroundColor = [UIColor whiteColor];
     self.userTextField.placeholder = @"用户名";
-    [userTextFieldBackgroundLabel addSubview:self.userTextField];
+    self.userTextField.returnKeyType = UIReturnKeyNext;
+    self.userTextField.delegate = self;
+    [userTextFieldBackgroundView addSubview:self.userTextField];
     
     
 
     
     
     // 邮箱
-    UILabel *emailFieldBackgroundLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(userTextFieldBackgroundLabel.frame), self.bounds.size.width, 45)];
-    emailFieldBackgroundLabel.backgroundColor = [UIColor whiteColor];
-    [self.backgroundScrollView addSubview:emailFieldBackgroundLabel];
+    // 用户名
+    UIView *lineView2 = [[UIView alloc] initWithFrame:CGRectMake(25, CGRectGetMaxY(userTextFieldBackgroundView.frame) - 1, self.bounds.size.width, 1)];
+    lineView2.backgroundColor = UIColorFromRGB(0xc8c7cc);
+    [self.backgroundScrollView addSubview:lineView2];
+    UIView *emailFieldBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(userTextFieldBackgroundView.frame), self.bounds.size.width, 45)];
+    emailFieldBackgroundView.backgroundColor = [UIColor whiteColor];
+    [self.backgroundScrollView addSubview:emailFieldBackgroundView];
     
     self.EmailTextField = [[UITextField alloc] initWithFrame:CGRectMake(24, 0, self.bounds.size.width - 24, 45)];
-    self.EmailTextField.backgroundColor = [UIColor blackColor];
+    self.EmailTextField.backgroundColor = [UIColor whiteColor];
     self.EmailTextField.placeholder = @"邮箱";
-    [emailFieldBackgroundLabel addSubview:self.EmailTextField];
+    self.EmailTextField.returnKeyType = UIReturnKeyNext;
+    self.EmailTextField.delegate = self;
+    [emailFieldBackgroundView addSubview:self.EmailTextField];
 
     
-    // 密码
-    UILabel *passwordTextFieldBackgroundLabel  = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(emailFieldBackgroundLabel.frame), self.bounds.size.width, 45)];
-    passwordTextFieldBackgroundLabel.backgroundColor = [UIColor whiteColor];
-    [self.backgroundScrollView addSubview:passwordTextFieldBackgroundLabel];
+//    // 密码
+//    UIView *lineView3 = [[UIView alloc] initWithFrame:CGRectMake(25, CGRectMake(0, CGRectGetMax(emailFieldBackgroundView.frame) - 1, self.bounds.size.width, 1)];
+//    lineView3.backgroundColor = UIColorFromRGB(0xc8c7cc);
+//    [self.backgroundScrollView addSubview:lineView3];
+    
+    UIView *passwordTextFieldBackgroundView  = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(emailFieldBackgroundView.frame), self.bounds.size.width, 45)];
+    passwordTextFieldBackgroundView.backgroundColor = [UIColor whiteColor];
+    [self.backgroundScrollView addSubview:passwordTextFieldBackgroundView];
     
     self.passwordTextField = [[UITextField alloc] initWithFrame:CGRectMake(24, 0, self.bounds.size.width - 24, 45)];
-    self.passwordTextField.backgroundColor = [UIColor blackColor];
+    self.passwordTextField.backgroundColor = [UIColor whiteColor];
     self.passwordTextField.placeholder = @"密码";
-    [passwordTextFieldBackgroundLabel addSubview:self.passwordTextField];
+    self.passwordTextField.returnKeyType = UIReturnKeyDone;
+    self.passwordTextField.delegate = self;
+    [passwordTextFieldBackgroundView addSubview:self.passwordTextField];
 
     
     // 注册
     self.registerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.registerButton.frame = CGRectMake(0, CGRectGetMaxY(passwordTextFieldBackgroundLabel.frame) + 35, 345, 45);
+    self.registerButton.frame = CGRectMake(0, CGRectGetMaxY(passwordTextFieldBackgroundView.frame) + 35, 345, 45);
     self.registerButton.center = CGPointMake(self.bounds.size.width * 0.5, self.registerButton.center.y);
     [self.registerButton setTitle:@"注册" forState:UIControlStateNormal];
     self.registerButton.backgroundColor = kMainColor;
     [self.registerButton addTarget:self action:@selector(registerButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
     [self.backgroundScrollView addSubview:self.registerButton];
 }
 
@@ -94,4 +112,20 @@
 
 }
 
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.userTextField) {
+        [self.EmailTextField becomeFirstResponder];
+    } else if (textField == self.EmailTextField) {
+        [self.passwordTextField becomeFirstResponder];
+    } else if (textField == self.passwordTextField){
+        if (self.block) {
+            self.block(self.userTextField.text,self.EmailTextField.text,self.passwordTextField.text);
+        }
+    
+    }
+    
+    
+    return YES;
+}
 @end
