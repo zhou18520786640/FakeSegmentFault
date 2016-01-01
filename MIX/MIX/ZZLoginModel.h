@@ -12,25 +12,25 @@
 @class ZZLoginMobileModel;
 @class ZZLoginUserModel;
 @interface ZZLoginModel : ZZBaseResponseModel
-@property (nonatomic, strong) ZZLoginMobileModel<Optional> *mobile;
-@property (nonatomic, strong) ZZLoginUserModel<Optional> *user;
-@property (nonatomic, copy) NSString<Optional> *token;
+@property (nonatomic, strong) ZZLoginMobileModel *mobile;
+//@property (nonatomic, strong) ZZLoginUserModel *user;
+@property (nonatomic, copy) NSString *token;
 @end
 
 
 @interface ZZLoginMobileModel : JSONModel
-@property (nonatomic, copy) NSString<Optional> *error_code;
-@property (nonatomic, copy) NSString<Optional> *error;
-@property (nonatomic, copy) NSString<Optional> *request;
+@property (nonatomic, copy) NSString *error_code;
+@property (nonatomic, copy) NSString *error;
+@property (nonatomic, copy) NSString *request;
 @end
 
 @interface ZZLoginUserModel : JSONModel
-@property (nonatomic, copy) NSString<Optional> *name;
-@property (nonatomic, copy) NSString<Optional> *mail;
-@property (nonatomic, copy) NSString<Optional> *slug;
-@property (nonatomic, copy) NSString<Optional> *userID;
-@property (nonatomic, copy) NSString<Optional> *url;
-@property (nonatomic, copy) NSString<Optional> *rank;
-@property (nonatomic, copy) NSString<Optional> *avatarUrl;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *mail;
+@property (nonatomic, copy) NSString *slug;
+@property (nonatomic, copy) NSString *userID;
+@property (nonatomic, copy) NSString *url;
+@property (nonatomic, copy) NSString *rank;
+@property (nonatomic, copy) NSString *avatarUrl;
 
 @end

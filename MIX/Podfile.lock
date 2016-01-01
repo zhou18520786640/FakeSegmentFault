@@ -31,6 +31,7 @@ PODS:
     - DTFoundation/Core
   - DTFoundation/UIKit (1.7.6):
     - DTFoundation/Core
+  - FrameAccessor (2.0)
   - HMSegmentedControl (1.5.2)
   - JSONModel (1.1.0)
   - MBProgressHUD (0.9.1)
@@ -51,6 +52,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - DTCoreText (~> 1.6.16)
+  - FrameAccessor
   - HMSegmentedControl
   - JSONModel
   - MBProgressHUD (~> 0.9.1)
@@ -68,6 +70,7 @@ SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   DTCoreText: 934a16fe9ffdd169c96261721b39dc312b75713d
   DTFoundation: bf431de2292484461ff7d92295fdae7dc15a3820
+  FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
   HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
   JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad

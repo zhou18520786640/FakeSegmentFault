@@ -9,11 +9,18 @@
 #import "ZZLoginModel.h"
 
 @implementation ZZLoginModel
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
 
 @end
 
 @implementation ZZLoginMobileModel
-
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
 @end
 
 
@@ -23,6 +30,11 @@
     return [[JSONKeyMapper alloc] initWithDictionary:@{
                                                        @"id": @"userID",
                                                        }];
+}
+
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
 }
 @end
 

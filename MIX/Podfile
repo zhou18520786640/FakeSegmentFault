@@ -8,6 +8,8 @@ pod 'JSONModel'
 pod 'MBProgressHUD', '~> 0.9.1'
 pod 'SDWebImage', '~> 3.7.3'
 pod 'DTCoreText', '~> 1.6.16'
+pod 'FrameAccessor'
+
 
 pod 'ShareSDK3'
 pod 'ShareSDK3/ShareSDKUI'

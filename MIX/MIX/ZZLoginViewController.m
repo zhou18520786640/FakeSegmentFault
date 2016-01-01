@@ -14,6 +14,8 @@
 #import "ZZRegisterViewController.h"
 #import "ZZLoginModel.h"
 #import "ZZConfiguration.h"
+#import <FrameAccessor/ViewFrameAccessor.h>
+
 
 @interface ZZLoginViewController ()
 
@@ -74,7 +76,9 @@
     self.registerButton.frame = CGRectMake(74, CGRectGetMaxY(self.loginButton.frame) + 50, 60, 15);
     [self.backgroundScrollView addSubview:self.registerButton];
     
-    
+    self.retrivePasswordButton.frame = CGRectMake(0, self.loginButton.bottom + 50, 60, 15);
+    self.retrivePasswordButton.right = self.view.width - 74;
+    [self.backgroundScrollView addSubview:self.retrivePasswordButton];
 }
 
 - (void)configureLeftBarItem {
@@ -96,13 +100,13 @@
 - (void)loginButtonDidPressed:(UIButton *)button {
     [self showLoading];
     @weakify(self);
-    [[ZZHttpClient sharedHTTPClient] requestLoginWithName:_loginInputView.emailText password:_loginInputView.passwordText SuccessBlock:^(id data) {
+    [[ZZHttpClient sharedHTTPClient] requestLoginWithName:_loginInputView.emailText password:_loginInputView.passwordText SuccessBlock:^(NSDictionary *data) {
         @strongify(self);
         [self hideLoading];
         ZZLoginModel *loginModel = [[ZZLoginModel alloc] initWithDictionary:data error:nil];
         if (loginModel.status == 0) {
             [ZZConfiguration sharedConfigration].token = loginModel.token;
-            [ZZConfiguration sharedConfigration].userID = loginModel.user.userID;
+//            [ZZConfiguration sharedConfigration].userID = loginModel.user.userID;
             [self dismissViewControllerAnimated:YES completion:nil];
             if (self.finishLoginBlock) {
                 self.finishLoginBlock();
@@ -126,6 +130,14 @@
     [self presentViewController:navigationController animated:YES completion:nil];
 
 }
+
+
+- (void)retrivePasswordButtonDidPressed:(UIButton *)button {
+    NSLog(@"找回密码log");
+
+
+}
+
 
 #pragma mark - setter and getter
 
@@ -182,6 +194,20 @@
         
     }
     return _registerButton;
+
+}
+
+- (UIButton *)retrivePasswordButton {
+    if (_retrivePasswordButton == nil) {
+        _retrivePasswordButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_retrivePasswordButton setTitle:@"找回密码" forState:UIControlStateNormal];
+        _retrivePasswordButton.titleLabel.font = [UIFont systemFontOfSize:15];
+        _retrivePasswordButton.titleLabel.textAlignment = NSTextAlignmentLeft;
+        [_retrivePasswordButton addTarget:self action:@selector(retrivePasswordButtonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [_retrivePasswordButton setTitleColor:UIColorFromRGB(0xa4a4a4) forState:UIControlStateNormal];
+        
+    }
+    return _retrivePasswordButton;
 
 }
 
