@@ -57,7 +57,8 @@
 - (void)configureSubViews{
  
     // scrollView
-    self.backgroundScrollView.contentSize = self.view.bounds.size;
+    self.backgroundScrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height + 160);
+    self.backgroundScrollView.bounces = YES;
     [self.backgroundScrollView addSubview:self.loginInputView];
     
     // 登录按钮

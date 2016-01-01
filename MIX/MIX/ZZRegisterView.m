@@ -120,7 +120,10 @@
         [self.passwordTextField becomeFirstResponder];
     } else if (textField == self.passwordTextField){
         if (self.block) {
-            self.block(self.userTextField.text,self.EmailTextField.text,self.passwordTextField.text);
+            NSString *text = self.userTextField.text;
+            NSString *email = self.EmailTextField.text;
+            NSString *password = self.passwordTextField.text;
+            self.block(text, email, password);
         }
     
     }
