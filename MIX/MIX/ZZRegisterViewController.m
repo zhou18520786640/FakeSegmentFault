@@ -7,20 +7,11 @@
 //
 
 #import "ZZRegisterViewController.h"
+#import "ZZRegisterView.h"
+#import "ZZHttpClient.h"
 
 @interface ZZRegisterViewController ()
-// 可滚动的背景
-@property (nonatomic, strong) UIScrollView *backgroundScrollView;
-
-// 输入的内容
-@property (nonatomic, strong) UITextField *userTextField;
-@property (nonatomic, strong) UITextField *EmailTextField;
-@property (nonatomic, strong) UITextField *passwordTextField;
-
-// 注册按钮
-@property (nonatomic, strong) UIButton *registerButton;
-
-
+@property (nonatomic, strong) ZZRegisterView *registerView;
 @end
 
 @implementation ZZRegisterViewController
@@ -28,17 +19,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+//    self.registerView = [[ZZRegisterView alloc] initWithFrame:self.view.bounds withRegisterViewClickBlock:^(NSString *name, NSString *email, NSString *password) {
+//        [ZZHttpClient sharedHTTPClient] requestRegister:name email:email password:password
+//    }];
+    
+    self.registerView = [[ZZRegisterView alloc] initWithFrame:self.view.bounds withRegisterViewClickBlock:^(NSString *name, NSString *email, NSString *password) {
+        
+    }];
+
+    self.view = self.registerView;
     [self configureTitles:@"注册账号"];
     [self configureCancelBarItem];
     
 }
 
-#pragma mark - Target Action 
-- (void)leftButtonDidPressed {
-    [self dismissViewControllerAnimated:YES completion:nil];
 
 
-}
 
 #pragma mark - private method
 - (void)configureCancelBarItem {
@@ -52,16 +48,9 @@
 }
 
 
-
-#pragma mark - getter 
-- (UIScrollView *)backgroundScrollView{
-    if (_backgroundScrollView == nil) {
-        _backgroundScrollView = [[UIScrollView alloc] initWithFrame:self.view.
-                                 bounds];
-        
-        [self.view addSubview:_backgroundScrollView];
-    }
-    return _backgroundScrollView;
+#pragma mark - target action 
+- (void)leftButtonDidPressed {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

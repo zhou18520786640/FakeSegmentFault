@@ -69,13 +69,28 @@ static NSString * const kBaseURL = @"http://api.segmentfault.com";
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         fail(error);
     }];
-    
+}
+
+
+- (void)requestRegisterWithName:(NSString *)name
+                          email:(NSString *)email
+                       password:(NSString *)password
+                   SuccessBlock:(SuccessBlock)success
+                      failBlock:(FailBlock)fail {
+
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    parameters[@"name"] = name;
+    parameters[@"email"] = email;
+    parameters[@"password"] = password;
+    // TODO
+//    self POST:@"" parameters:<#(id)#> success:<#^(NSURLSessionDataTask *task, id responseObject)success#> failure:<#^(NSURLSessionDataTask *task, NSError *error)failure#>
+
+
+
 
 
 
 }
-
-
 
 
 

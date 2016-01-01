@@ -14,7 +14,7 @@ typedef void (^FailBlock)(id data);
 @interface ZZHttpClient : AFHTTPSessionManager
 + (ZZHttpClient *)sharedHTTPClient;
 
-
+// 超过三个的数组封装陈成一个dictionary
 
 #pragma mark - 个人中心
 
@@ -24,4 +24,14 @@ typedef void (^FailBlock)(id data);
 
 #pragma mark - 个人用户信息
 - (void)requestUserProfileWithSuccessBlock:(SuccessBlock)succces failBlock:(FailBlock)fail;
+
+#pragma mark - 注册
+- (void)requestRegisterWithName:(NSString *)name
+                  email:(NSString *)email
+               password:(NSString *)password
+           SuccessBlock:(SuccessBlock)success
+              failBlock:(FailBlock)fail;
+
+
 @end
+

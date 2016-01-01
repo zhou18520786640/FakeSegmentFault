@@ -63,9 +63,6 @@
     self.window.rootViewController = tabBarController;
     
     
-    
-//    UIImage *finishedImage = [UIImage imageNamed:@"tabbar_normal_background"];
-//    UIImage *unfinishedImage = [UIImage imageNamed:@"tabbar_normal_background"];
     NSArray *tabBarItemImages = @[@"icon_tab_wenda", @"icon_tab_qa", @"icon_tab_discover", @"icon_tab_search",@"icon_tab_user"];
     NSArray *titles = @[@"问题",@"文章",@"发现",@"搜索",@"我的"];
     
