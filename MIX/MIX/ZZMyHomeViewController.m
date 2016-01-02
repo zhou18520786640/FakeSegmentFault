@@ -26,7 +26,7 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *settingItems;
 
-@property (nonatomic, strong) ZZRankView *rankView;
+
 @end
 
 @implementation ZZMyHomeViewController

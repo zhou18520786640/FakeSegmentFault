@@ -9,14 +9,15 @@
 
 #import "ZZProfileCell.h"
 #import "MacroDefinition.h"
-
+#import "ZZRankView.h"
+#import <FrameAccessor/FrameAccessor.h>
 
 @interface ZZProfileCell ()
 @property (nonatomic, strong) UIImageView *profileImageView;
 @property (nonatomic, strong) UIView *backgroundProfileView;
-@property (nonatomic, strong) UIView *rankView;
 // 用户名，未登录且未注册时显示默认文案"登录/注册"
 @property (nonatomic, strong) UILabel *userNameAndLoginTipLabel;
+@property (nonatomic, strong) ZZRankView *rankView;
 @end
 
 
@@ -56,6 +57,9 @@
     [self.contentView addSubview:_userNameAndLoginTipLabel];
     
 
+    
+    _rankView = [[ZZRankView alloc] initWithFrame:CGRectMake(0, 150, [UIScreen mainScreen].bounds.size.width, 65)];
+    [self.contentView addSubview:_rankView];
     
 
 

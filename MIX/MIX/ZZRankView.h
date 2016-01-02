@@ -10,4 +10,7 @@
 
 @interface ZZRankView : UIView
 
+- (void)updateLikeCount:(NSString *)like
+             honorCount:(NSString *)honor
+        reputationCount:(NSString *)reputation;
 @end
