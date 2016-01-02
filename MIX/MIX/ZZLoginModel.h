@@ -11,9 +11,14 @@
 
 @class ZZLoginMobileModel;
 @class ZZLoginUserModel;
+@class ZZLoginDataModel;
 @interface ZZLoginModel : ZZBaseResponseModel
+@property (nonatomic, strong) ZZLoginDataModel *data;
+@end
+
+@interface ZZLoginDataModel : JSONModel
 @property (nonatomic, strong) ZZLoginMobileModel *mobile;
-//@property (nonatomic, strong) ZZLoginUserModel *user;
+@property (nonatomic, strong) ZZLoginUserModel *user;
 @property (nonatomic, copy) NSString *token;
 @end
 

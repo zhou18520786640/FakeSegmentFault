@@ -117,16 +117,20 @@
     [[ZZHttpClient sharedHTTPClient] requestLoginWithName:_loginInputView.emailText password:_loginInputView.passwordText SuccessBlock:^(NSDictionary *data) {
         @strongify(self);
         [self hideLoading];
+        
+        
+    
+
         ZZLoginModel *loginModel = [[ZZLoginModel alloc] initWithDictionary:data error:nil];
         if (loginModel.status == 0) {
-            [ZZConfiguration sharedConfigration].token = loginModel.token;
-//            [ZZConfiguration sharedConfigration].userID = loginModel.user.userID;
+            [ZZConfiguration sharedConfigration].token = loginModel.data.token;
+            [ZZConfiguration sharedConfigration].userID = loginModel.data.user.userID;
             [self dismissViewControllerAnimated:YES completion:nil];
             if (self.finishLoginBlock) {
                 self.finishLoginBlock();
             }
         }else {
-            NSString *errorMessage = loginModel.mobile.error;
+            NSString *errorMessage = loginModel.data.mobile.error;
             [self showText:errorMessage];
         
         }

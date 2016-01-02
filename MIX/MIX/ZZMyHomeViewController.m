@@ -113,13 +113,13 @@
         if ([ZZConfiguration sharedConfigration].token.length == 0) {
             @weakify(self);
             ZZLoginViewController *loginViewController = [[ZZLoginViewController alloc] initWithFinishLogin:^{
-                @strongify(self);
+
                 [[ZZHttpClient sharedHTTPClient] requestUserProfileWithSuccessBlock:^(id data) {
-                    @strongify(self);
-                    NSLog(@"success");
-                } failBlock:^(id data) {
-                    @strongify(self);
-                    NSLog(@"fail");
+                    
+                    
+                } failBlock:^(NSError *error) {
+                    
+                    NSLog(@"Failure");
                 }];
                 
                 
@@ -170,7 +170,6 @@
     }
 
 }
-
 
 
 

@@ -16,6 +16,13 @@
 
 @end
 
+@implementation ZZLoginDataModel
++(BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
+@end
+
 @implementation ZZLoginMobileModel
 +(BOOL)propertyIsOptional:(NSString*)propertyName
 {
