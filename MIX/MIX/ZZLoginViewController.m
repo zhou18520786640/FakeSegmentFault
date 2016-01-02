@@ -14,13 +14,14 @@
 #import "ZZRegisterViewController.h"
 #import "ZZLoginModel.h"
 #import "ZZConfiguration.h"
+#import "ZZLoginThirdPartyView.h"
 #import <FrameAccessor/ViewFrameAccessor.h>
 
 
 @interface ZZLoginViewController ()
 
 @property (nonatomic, copy) FinishLoginBlock finishLoginBlock;
-
+@property (nonatomic, strong) ZZLoginThirdPartyView *loginThirdPartyView;
 @property (nonatomic, strong) UIScrollView *backgroundScrollView;
 @property (nonatomic, strong) UILabel *loginTipLabel;
 @property (nonatomic, strong) ZZLoginInputView *loginInputView;
@@ -62,6 +63,15 @@
     self.backgroundScrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height + 160);
     self.backgroundScrollView.bounces = YES;
     [self.backgroundScrollView addSubview:self.loginInputView];
+    
+    
+    // 宽度,高度自适应
+    CGRect rect = CGRectMake(0, 41, 0, 0);
+    ZZLoginThirdPartyView *loginThirdPartyView = [[ZZLoginThirdPartyView alloc] initWithFrame:rect thirdPartyIconDidPressedblock:^(ZZLoginThirdPartyViewType type) {
+        
+    }];
+    loginThirdPartyView.centerX =  self.view.width * 0.5;
+    [self.backgroundScrollView addSubview:loginThirdPartyView];
     
     // 登录按钮
     self.loginButton.frame = CGRectMake(0, CGRectGetMaxY(_loginInputView.frame) + 16, 346, 45);
@@ -210,5 +220,7 @@
     return _retrivePasswordButton;
 
 }
+
+
 
 @end
