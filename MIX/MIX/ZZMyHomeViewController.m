@@ -17,6 +17,7 @@
 #import "ZZSettingViewController.h"
 #import "EXTScope.h"
 #import "ZZHttpClient.h"
+#import "MJRefresh.h"
 
 
 
@@ -37,6 +38,14 @@
    
     [self configureTitles:@"我的主页"];
     [self.tableView reloadData];
+    @weakify(self)
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        sleep(4);
+        @strongify(self)
+        [self.tableView.header endRefreshing];
+    }];
+    
+    [self.tableView.header beginRefreshing];
     
 }
 
