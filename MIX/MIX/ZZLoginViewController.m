@@ -16,6 +16,8 @@
 #import "ZZConfiguration.h"
 #import "ZZLoginThirdPartyView.h"
 #import <FrameAccessor/ViewFrameAccessor.h>
+#import <ShareSDK/ShareSDK.h>
+
 
 
 @interface ZZLoginViewController ()
@@ -68,6 +70,8 @@
     // 宽度,高度自适应
     CGRect rect = CGRectMake(0, 41, 0, 0);
     ZZLoginThirdPartyView *loginThirdPartyView = [[ZZLoginThirdPartyView alloc] initWithFrame:rect thirdPartyIconDidPressedblock:^(ZZLoginThirdPartyViewType type) {
+        
+        
         
     }];
     loginThirdPartyView.centerX =  self.view.width * 0.5;
