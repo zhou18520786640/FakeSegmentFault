@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ZZProfileCell : UITableViewCell
-
+- (void)updateLikeCount:(NSString *)like
+             honorCount:(NSString *)honor
+        reputationCount:(NSString *)reputation;
+- (void)updateName:(NSString *)userName;
 @end

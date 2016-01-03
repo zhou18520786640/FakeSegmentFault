@@ -71,7 +71,16 @@
     // Configure the view for the selected state
 }
 
+- (void)updateLikeCount:(NSString *)like
+             honorCount:(NSString *)honor
+        reputationCount:(NSString *)reputation {
+    [self.rankView updateLikeCount:like honorCount:honor reputationCount:reputation];
+}
 
+- (void)updateName:(NSString *)userName {
+    self.userNameAndLoginTipLabel.text = userName;
+
+}
 
 
 @end

@@ -18,7 +18,7 @@
 #import "EXTScope.h"
 #import "ZZHttpClient.h"
 #import "MJRefresh.h"
-
+#import "ZZProfileModel.h"
 
 
 
@@ -26,6 +26,7 @@
 @interface ZZMyHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *settingItems;
+@property (nonatomic, strong) ZZProfileModel *profileModel;
 
 
 @end
@@ -37,10 +38,9 @@
     self.view.backgroundColor = UIColorFromRGB(0xefeff4);
    
     [self configureTitles:@"我的主页"];
-    [self.tableView reloadData];
     @weakify(self)
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        sleep(4);
+        [self.tableView reloadData];
         @strongify(self)
         [self.tableView.header endRefreshing];
     }];
@@ -79,16 +79,18 @@
             cell = [[ZZProfileCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:imageCellIdentifer];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
+    
+        [self configureProfileCell:cell];
         return cell;
     }else {
         static NSString *listCellIdentifer = @"listCellIdentifer";
         ZZListCell  *cell = [tableView dequeueReusableCellWithIdentifier:listCellIdentifer];
         if (cell == nil) {
             cell = [[ZZListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:listCellIdentifer];
-            [self configureCell:cell indexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
         }
+        [self configureCell:cell indexPath:indexPath];
+
         return cell;
 
     }
@@ -113,12 +115,14 @@
         if ([ZZConfiguration sharedConfigration].token.length == 0) {
             @weakify(self);
             ZZLoginViewController *loginViewController = [[ZZLoginViewController alloc] initWithFinishLogin:^{
-
+                @strongify(self)
                 [[ZZHttpClient sharedHTTPClient] requestUserProfileWithSuccessBlock:^(id data) {
-                    
-                    
+                    ZZProfileModel *profileModel = [[ZZProfileModel alloc] initWithDictionary:data error:nil];
+                    self.profileModel = profileModel;
+                    [self.tableView.header beginRefreshing];
                 } failBlock:^(NSError *error) {
                     
+                    [self showText:@"服务器或者网络错误"];
                     NSLog(@"Failure");
                 }];
                 
@@ -171,6 +175,17 @@
 
 }
 
+- (void)configureProfileCell:(ZZProfileCell *)cell{
+    if(self.profileModel != nil){
+        ZZProfileModel *profileModel = self.profileModel;
+        NSString *like = profileModel.data.likedVotes;
+        NSString *honor = profileModel.data.badges;
+        NSString *reputation = profileModel.data.rank;
+        [cell updateLikeCount:like honorCount:honor reputationCount:reputation];
+        [cell updateName:profileModel.data.name];
+    }
+
+}
 
 
 
