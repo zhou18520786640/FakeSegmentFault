@@ -47,6 +47,7 @@
 		CB987FD81C129E350013B3E0 /* ZZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB987FD71C129E350013B3E0 /* ZZViewController.m */; };
 		CBA142E71C27139B003D8186 /* ZZBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA142E61C27139B003D8186 /* ZZBrowerViewController.m */; };
 		CBA8C26C1C3AC42900F7FB37 /* ZZMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA8C26B1C3AC42900F7FB37 /* ZZMyProfileViewController.m */; };
+		CBA8C2711C3ACAE500F7FB37 /* ZZInformationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA8C2701C3ACAE500F7FB37 /* ZZInformationModel.m */; };
 		CBB18E001C376E8C00C7D317 /* ZZLoginThirdPartyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB18DFF1C376E8C00C7D317 /* ZZLoginThirdPartyView.m */; };
 		CBB46D1B1C318BF900D291ED /* ZZLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB46D1A1C318BF900D291ED /* ZZLoginModel.m */; };
 		CBB666651C2EE8BB00D0419D /* global.css in Resources */ = {isa = PBXBuildFile; fileRef = CBB666641C2EE8BB00D0419D /* global.css */; };
@@ -155,6 +156,8 @@
 		CBA142E61C27139B003D8186 /* ZZBrowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBrowerViewController.m; sourceTree = "<group>"; };
 		CBA8C26A1C3AC42900F7FB37 /* ZZMyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMyProfileViewController.h; sourceTree = "<group>"; };
 		CBA8C26B1C3AC42900F7FB37 /* ZZMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZMyProfileViewController.m; sourceTree = "<group>"; };
+		CBA8C26F1C3ACAE500F7FB37 /* ZZInformationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZInformationModel.h; sourceTree = "<group>"; };
+		CBA8C2701C3ACAE500F7FB37 /* ZZInformationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZInformationModel.m; sourceTree = "<group>"; };
 		CBB18DFE1C376E8C00C7D317 /* ZZLoginThirdPartyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZLoginThirdPartyView.h; sourceTree = "<group>"; };
 		CBB18DFF1C376E8C00C7D317 /* ZZLoginThirdPartyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZLoginThirdPartyView.m; sourceTree = "<group>"; };
 		CBB46D191C318BF900D291ED /* ZZLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZLoginModel.h; sourceTree = "<group>"; };
@@ -253,7 +256,7 @@
 				CBA8C2691C3AC40300F7FB37 /* 个人信息 */,
 				CB00A7721C2E60E60032DF24 /* Setting (设置) */,
 				CB00A7551C2B1A7E0032DF24 /* Register(注册) */,
-				CB2B0D491C04D8A40079847C /* Me（我的） */,
+				CB2B0D491C04D8A40079847C /* Me（我的主页） */,
 				CB00A7441C2B099B0032DF24 /* Login(登录) */,
 			);
 			name = "我的模块";
@@ -332,6 +335,7 @@
 		CB00A77A1C2E68EE0032DF24 /* 我的模块 */ = {
 			isa = PBXGroup;
 			children = (
+				CBA8C26D1C3ACA9400F7FB37 /* Profile */,
 				CBB46D181C318B9D00D291ED /* Login */,
 				CB00A7481C2B0A860032DF24 /* Register */,
 			);
@@ -435,7 +439,7 @@
 			name = "Search（搜索）";
 			sourceTree = "<group>";
 		};
-		CB2B0D491C04D8A40079847C /* Me（我的） */ = {
+		CB2B0D491C04D8A40079847C /* Me（我的主页） */ = {
 			isa = PBXGroup;
 			children = (
 				CB32C0831C04C28F00B6CB02 /* ZZMyHomeViewController.h */,
@@ -447,7 +451,7 @@
 				CB00A7641C2DA4510032DF24 /* ZZListCell.h */,
 				CB00A7651C2DA4510032DF24 /* ZZListCell.m */,
 			);
-			name = "Me（我的）";
+			name = "Me（我的主页）";
 			sourceTree = "<group>";
 		};
 		CB32C03D1C04BD9300B6CB02 = {
@@ -611,6 +615,15 @@
 				CBA8C26B1C3AC42900F7FB37 /* ZZMyProfileViewController.m */,
 			);
 			name = "个人信息";
+			sourceTree = "<group>";
+		};
+		CBA8C26D1C3ACA9400F7FB37 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CBA8C26F1C3ACAE500F7FB37 /* ZZInformationModel.h */,
+				CBA8C2701C3ACAE500F7FB37 /* ZZInformationModel.m */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		CBB46D181C318B9D00D291ED /* Login */ = {
@@ -838,6 +851,7 @@
 				CB32C04E1C04BD9300B6CB02 /* AppDelegate.m in Sources */,
 				CBC1E3281C38D9F600B6C24C /* ZZProfileModel.m in Sources */,
 				CBD1BB571C12A62E00D977F1 /* ZZBaseResponseModel.m in Sources */,
+				CBA8C2711C3ACAE500F7FB37 /* ZZInformationModel.m in Sources */,
 				CB00A7781C2E65770032DF24 /* ZZRegisterViewController.m in Sources */,
 				CBB46D1B1C318BF900D291ED /* ZZLoginModel.m in Sources */,
 				CBD1BB531C12A5AF00D977F1 /* ZZNewestListModel.m in Sources */,

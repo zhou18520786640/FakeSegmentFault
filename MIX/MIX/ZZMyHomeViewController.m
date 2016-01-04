@@ -19,6 +19,7 @@
 #import "ZZHttpClient.h"
 #import "MJRefresh.h"
 #import "ZZProfileModel.h"
+#import "ZZMyProfileViewController.h"
 
 
 
@@ -126,9 +127,6 @@
                     NSLog(@"Failure");
                 }];
                 
-                
-                
-                
             }];
             
             
@@ -139,7 +137,8 @@
         }else{
             //!! 晚些替换成宏
             if (indexPath.section == 0 && indexPath.row == 0) {
-            
+                ZZMyProfileViewController *myProfileViewController = [[ZZMyProfileViewController alloc] init];
+                [self.navigationController pushViewController:myProfileViewController animated:YES];
             
             } else if (indexPath.section == 1 && indexPath.row == 0) {
                 
