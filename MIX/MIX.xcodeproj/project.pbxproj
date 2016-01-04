@@ -46,6 +46,7 @@
 		CB5D7A7F1C361A0E00CA8BA5 /* ZZRegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5D7A7E1C361A0E00CA8BA5 /* ZZRegisterView.m */; };
 		CB987FD81C129E350013B3E0 /* ZZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB987FD71C129E350013B3E0 /* ZZViewController.m */; };
 		CBA142E71C27139B003D8186 /* ZZBrowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA142E61C27139B003D8186 /* ZZBrowerViewController.m */; };
+		CBA8C26C1C3AC42900F7FB37 /* ZZMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA8C26B1C3AC42900F7FB37 /* ZZMyProfileViewController.m */; };
 		CBB18E001C376E8C00C7D317 /* ZZLoginThirdPartyView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB18DFF1C376E8C00C7D317 /* ZZLoginThirdPartyView.m */; };
 		CBB46D1B1C318BF900D291ED /* ZZLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB46D1A1C318BF900D291ED /* ZZLoginModel.m */; };
 		CBB666651C2EE8BB00D0419D /* global.css in Resources */ = {isa = PBXBuildFile; fileRef = CBB666641C2EE8BB00D0419D /* global.css */; };
@@ -152,6 +153,8 @@
 		CB987FD71C129E350013B3E0 /* ZZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZViewController.m; sourceTree = "<group>"; };
 		CBA142E51C27139B003D8186 /* ZZBrowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZBrowerViewController.h; sourceTree = "<group>"; };
 		CBA142E61C27139B003D8186 /* ZZBrowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZBrowerViewController.m; sourceTree = "<group>"; };
+		CBA8C26A1C3AC42900F7FB37 /* ZZMyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZMyProfileViewController.h; sourceTree = "<group>"; };
+		CBA8C26B1C3AC42900F7FB37 /* ZZMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZMyProfileViewController.m; sourceTree = "<group>"; };
 		CBB18DFE1C376E8C00C7D317 /* ZZLoginThirdPartyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZLoginThirdPartyView.h; sourceTree = "<group>"; };
 		CBB18DFF1C376E8C00C7D317 /* ZZLoginThirdPartyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZLoginThirdPartyView.m; sourceTree = "<group>"; };
 		CBB46D191C318BF900D291ED /* ZZLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZLoginModel.h; sourceTree = "<group>"; };
@@ -247,6 +250,7 @@
 		CB00A7501C2B19160032DF24 /* 我的模块 */ = {
 			isa = PBXGroup;
 			children = (
+				CBA8C2691C3AC40300F7FB37 /* 个人信息 */,
 				CB00A7721C2E60E60032DF24 /* Setting (设置) */,
 				CB00A7551C2B1A7E0032DF24 /* Register(注册) */,
 				CB2B0D491C04D8A40079847C /* Me（我的） */,
@@ -600,6 +604,15 @@
 			name = "Brower(浏览器)";
 			sourceTree = "<group>";
 		};
+		CBA8C2691C3AC40300F7FB37 /* 个人信息 */ = {
+			isa = PBXGroup;
+			children = (
+				CBA8C26A1C3AC42900F7FB37 /* ZZMyProfileViewController.h */,
+				CBA8C26B1C3AC42900F7FB37 /* ZZMyProfileViewController.m */,
+			);
+			name = "个人信息";
+			sourceTree = "<group>";
+		};
 		CBB46D181C318B9D00D291ED /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -816,6 +829,7 @@
 				CB00A74E1C2B0FB20032DF24 /* ZZLoginInputView.m in Sources */,
 				CB250D521C13D19F00F37028 /* ZZQuestionDetailModel.m in Sources */,
 				CB00A74B1C2B0ABC0032DF24 /* ZZUser.m in Sources */,
+				CBA8C26C1C3AC42900F7FB37 /* ZZMyProfileViewController.m in Sources */,
 				CB00A7751C2E61160032DF24 /* ZZSettingViewController.m in Sources */,
 				CB34D76E1C06EDB70081C4FB /* ZZHottestViewController.m in Sources */,
 				CB32C0791C04C24700B6CB02 /* ZZQuestionViewController.m in Sources */,

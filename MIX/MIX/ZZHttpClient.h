@@ -31,7 +31,8 @@ typedef void (^FailBlock)(id data);
                password:(NSString *)password
            SuccessBlock:(SuccessBlock)success
               failBlock:(FailBlock)fail;
-
+#pragma mark - 个人资料
+- (void)requestMeWithSuccessBlock:(SuccessBlock)succces failBlock:(FailBlock)fail;
 
 @end
 
