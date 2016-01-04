@@ -95,7 +95,7 @@ static NSString * const kBaseURL = @"http://api.segmentfault.com";
 - (void)requestMeWithSuccessBlock:(SuccessBlock)succces failBlock:(FailBlock)fail{
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     parameters[@"token"] = [ZZConfiguration sharedConfigration].token;
-    [self GET:@"" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
+    [self GET:@"/user/me" parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
         succces(responseObject);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         fail(error);
