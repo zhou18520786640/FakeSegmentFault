@@ -28,6 +28,7 @@
 @interface ZZMyHomeViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *settingItems;
+// TODO:修改profile的内容直接用单例保存，而不是作为一个属性
 @property (nonatomic, strong) ZZProfileModel *profileModel;
 
 
