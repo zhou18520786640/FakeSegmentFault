@@ -45,7 +45,7 @@
         @strongify(self)
         [self.tableView.header endRefreshing];
     }];
-    
+    self.tableView.header.backgroundColor = kMainColor;
     [self.tableView.header beginRefreshing];
     
 }
