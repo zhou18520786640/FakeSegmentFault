@@ -20,6 +20,7 @@
 #import "MJRefresh.h"
 #import "ZZProfileModel.h"
 #import "ZZMyProfileViewController.h"
+#import "MJRefreshHeader.h"
 
 
 
@@ -37,15 +38,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColorFromRGB(0xefeff4);
-   
     [self configureTitles:@"我的主页"];
     @weakify(self)
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    MJRefreshNormalHeader *header = (MJRefreshNormalHeader *)[MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self.tableView reloadData];
+
         @strongify(self)
         [self.tableView.header endRefreshing];
     }];
-    self.tableView.header.backgroundColor = kMainColor;
+    header.stateLabel.hidden = YES;
+    header.lastUpdatedTimeLabel.hidden = YES;
+    header.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+    header.backgroundColor = kMainColor;
+    self.tableView.header = header;
+
+    
+    
     [self.tableView.header beginRefreshing];
     
 }
