@@ -10,6 +10,9 @@
 #import "MBProgressHUD.h"
 #import "ZZConfiguration.h"
 
+
+
+
 // 使用一个静态类来封装
 static MBProgressHUD *loadingHud = nil;
 static NSString * const kBaseURL = @"http://api.segmentfault.com";
