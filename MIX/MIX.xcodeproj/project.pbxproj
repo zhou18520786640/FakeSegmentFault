@@ -18,7 +18,6 @@
 		CB00A7711C2E55190032DF24 /* ZZConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A7701C2E55190032DF24 /* ZZConfiguration.m */; };
 		CB00A7751C2E61160032DF24 /* ZZSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A7741C2E61160032DF24 /* ZZSettingViewController.m */; };
 		CB00A7781C2E65770032DF24 /* ZZRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB00A7771C2E65770032DF24 /* ZZRegisterViewController.m */; };
-		CB06F0B61C263F3C003003EC /* questionDetail.css in Resources */ = {isa = PBXBuildFile; fileRef = CB06F0B51C263F3B003003EC /* questionDetail.css */; };
 		CB250D481C12D93100F37028 /* ZZAskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D471C12D93100F37028 /* ZZAskViewController.m */; };
 		CB250D4C1C13CEE100F37028 /* ZZQuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D4B1C13CEE100F37028 /* ZZQuestionDetailViewController.m */; };
 		CB250D521C13D19F00F37028 /* ZZQuestionDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CB250D511C13D19F00F37028 /* ZZQuestionDetailModel.m */; };
@@ -98,7 +97,6 @@
 		CB00A7741C2E61160032DF24 /* ZZSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZSettingViewController.m; sourceTree = "<group>"; };
 		CB00A7761C2E65770032DF24 /* ZZRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZRegisterViewController.h; sourceTree = "<group>"; };
 		CB00A7771C2E65770032DF24 /* ZZRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZRegisterViewController.m; sourceTree = "<group>"; };
-		CB06F0B51C263F3B003003EC /* questionDetail.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = questionDetail.css; sourceTree = "<group>"; };
 		CB250D461C12D93100F37028 /* ZZAskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAskViewController.h; sourceTree = "<group>"; };
 		CB250D471C12D93100F37028 /* ZZAskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZZAskViewController.m; sourceTree = "<group>"; };
 		CB250D4A1C13CEE100F37028 /* ZZQuestionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZQuestionDetailViewController.h; sourceTree = "<group>"; };
@@ -486,7 +484,6 @@
 				CB32C04C1C04BD9300B6CB02 /* AppDelegate.h */,
 				CB32C04D1C04BD9300B6CB02 /* AppDelegate.m */,
 				CB32C0491C04BD9300B6CB02 /* Supporting Files */,
-				CB06F0B51C263F3B003003EC /* questionDetail.css */,
 			);
 			path = MIX;
 			sourceTree = "<group>";
@@ -757,7 +754,6 @@
 			files = (
 				CB32C0501C04BD9300B6CB02 /* Assets.xcassets in Resources */,
 				CB32C0531C04BD9300B6CB02 /* LaunchScreen.storyboard in Resources */,
-				CB06F0B61C263F3C003003EC /* questionDetail.css in Resources */,
 				CBB666651C2EE8BB00D0419D /* global.css in Resources */,
 				CB00A75D1C2C2CC20032DF24 /* setting.plist in Resources */,
 				CBB666671C2EE99F00D0419D /* highlight.min.js in Resources */,
