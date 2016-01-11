@@ -130,8 +130,9 @@
                 self.finishLoginBlock();
             }
         }else {
-            NSString *errorMessage = loginModel.data.mobile.error;
-            [self showText:errorMessage];
+
+            [self showText:@"服务器或网络异常,请重试"];
+
         
         }
     } failBlock:^(id error) {
