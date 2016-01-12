@@ -69,7 +69,9 @@
     
     // 宽度,高度自适应
     CGRect rect = CGRectMake(0, 41, 0, 0);
+    @weakify(self)
     ZZLoginThirdPartyView *loginThirdPartyView = [[ZZLoginThirdPartyView alloc] initWithFrame:rect thirdPartyIconDidPressedblock:^(ZZLoginThirdPartyViewType type) {
+        @strongify(self)
         
         
         

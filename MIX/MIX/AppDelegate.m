@@ -17,6 +17,9 @@
 #import "MacroDefinition.h"
 #import "AFNetworkActivityIndicatorManager.h"
 #import "ZZHttpClient.h"
+#import "WeiboSDK.h"
+#import <ShareSDK/ShareSDK.h>
+#import <ShareSDKConnector/ShareSDKConnector.h>
 
 
 
@@ -106,10 +109,36 @@
     
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 
-    
+    [self configureMob];
     
     return YES;
 }
+
+- (void)configureMob {
+
+    
+//    NSArray *platforms = @[@(SSDKPlatformTypeSinaWeibo)];
+//    [ShareSDK registerApp:@"8bbbf303457a" activePlatforms:platforms onImport:^(SSDKPlatformType platformType) {
+//        if (platforms == SSDKPlatformTypeSinaWeibo) {
+//            
+//        }
+//        
+//    } onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
+//        switch (platformType) {
+//            case SSDKPlatformTypeSinaWeibo:
+//                [ShareSDKConnector connectWeibo:[]
+//                break;
+//                
+//            default:
+//                break;
+//        }
+//
+//    }];
+
+
+
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
